@@ -18,9 +18,25 @@ ui.start('#firebaseui-auth-container', {
   ],
   // Other config options...
 });
+
+
+// Is there an email link sign-in?
+if (ui.isPendingRedirect()) {
+  ui.start('#firebaseui-auth-container', uiConfig);
+}
+// This can also be done via:
+if ((firebase.auth().isSignInWithEmailLink(window.location.href)) {
+  ui.start('#firebaseui-auth-container', uiConfig);
+}
+)
   </script>
   <body>
     <h1>login in here</h1>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<h1>Welcome to My Awesome App</h1>
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
     <button type="submit" name="button">submit</button>
   </body>
 </html>
