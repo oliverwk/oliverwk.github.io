@@ -130,33 +130,8 @@ auth.onAuthStateChanged(user => {
 
     } else {
         // not signed in
-        userDetails.innerHTML = '';
+        alert("not signed in");
     }
 });
-
-async function appendData() {
-    sorts.forEach(sort => {
-      console.log(Object.keys(data_nakd[sort]));
-      Object.keys(data_nakd[sort]).forEach((item, i) => {
-           var data = data_nakd[sort][item];
-           console.log(i);
-           console.log(data.naam);
-           console.log(data_nakd[sort][item]);
-           document.getElementById("name"+String(i+1)).innerHTML = data.naam;
-           document.getElementById("price"+String(i+1)).innerHTML = data.prijs;
-           document.querySelectorAll(".img-fluid")[ice].setAttribute('src', data.img_url);
-           document.getElementById("name"+String(ice+3)).innerHTML = data.naam;
-           document.getElementById("price"+String(ice+3)).innerHTML = data.prijs;
-           document.getElementById("images"+String(ice+3)).setAttribute('src', data.img_url);
-           ice++;
-      });
-    });
-
-}
-
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('./nak/sw.js')
-  }
-
 </script>
 </html>
