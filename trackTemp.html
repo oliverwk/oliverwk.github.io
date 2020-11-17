@@ -103,7 +103,7 @@ var firebaseConfig = {
        messagingSenderId: "1074218483524",
        appId: "1:1074218483524:web:6217edb6aec709d5726111"
 };
-var app = firebase.initializeApp(firebaseConfig, "PeterWK");
+var app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 //signInBtn.onclick = () => auth.signInWithPopup(provider);
