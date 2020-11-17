@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TempTracker</title>
+    <meta charset="utf-8">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#d3a020">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandeldFriendly" content="true">
+    <script src="/__/firebase/8.0.2/firebase-app.js"></script>
+    <script src="/__/firebase/8.0.2/firebase-auth.js"></script>
+    <script src="/__/firebase/8.0.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+    </head>
+  <body id="body">
+    <canvas id="Chart" width="1080" height="1920" style="display: block; width: 1080px; height: 1920px;"></canvas>
+  </body>
+  <script type="text/javascript">
+  let temperature = [];
+  var timeFormat = 'MM/DD/YYYY HH:mm';
+  var color = Chart.helpers.color;
+  const chartColors = {
+    	red: 'rgb(255, 99, 132)',
+    	orange: 'rgb(255, 159, 64)',
+    	yellow: 'rgb(255, 205, 86)',
+    	green: 'rgb(75, 192, 192)',
+    	blue: 'rgb(54, 162, 235)',
+    	purple: 'rgb(153, 102, 255)',
+    	grey: 'rgb(201, 203, 207)'
+  };
+  var config = {
+    type: 'line',
+    data: {
+      labels: [ /* TODO: server dates hier dates uit firebase */ ],
+    datasets: [{
+        label: 'Luchtdruk buiten in de bilt',
+        backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
+        borderColor: chartColors.green,
+        fill: false,
+        data: [],
+      },{
+          label: 'Temperatuur buiten in de bilt',
+          backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
+          borderColor: chartColors.orange,
+          fill: false,
+          data: [],
+        },{
+            label: 'Luchtvochtigheid buiten in de bilt',
+            backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
+            borderColor: chartColors.yellow,
+            fill: false,
+            data: [],
+          },{
+              label: 'WindsnelheidMS buiten in de bilt',
+              backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+              borderColor: chartColors.red,
+              fill: false,
+              data: [],
+            }]
+    },
+    options: {
+      title: {
+        text: 'Chart.js Time Scale'
+      },
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            parser: timeFormat,
+            // round: 'day'
+            tooltipFormat: 'll HH:mm'
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Date'
+          }
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'value'
+          }
+        }]
+      },
+    }
+  };
+
+function MakeIt(config) {
+    console.log(config);
+    var ctx = document.getElementById('Chart').getContext('2d');
+    new Chart(ctx, config);
+};
+
+const userDetails = document.getElementById('userDetails');
+var firebaseConfig = {
+       apiKey: "AIzaSyBqtBAAiM49gbTDkuu3DJC5TDBCORYpBWM",
+       authDomain: "peterwk-52aac.firebaseapp.com",
+       databaseURL: "https://peterwk-52aac.firebaseio.com",
+       projectId: "peterwk-52aac",
+       storageBucket: "peterwk-52aac.appspot.com",
+       messagingSenderId: "1074218483524",
+       appId: "1:1074218483524:web:6217edb6aec709d5726111"
+};
+var app = firebase.initializeApp(firebaseConfig, "PeterWK");
+const auth = app.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+//signInBtn.onclick = () => auth.signInWithPopup(provider);
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        // signed in
+        console.log("hi, "+user.displayName);
+        var db = app.firestore();
+         db.collection("senses").orderBy("date", "desc")
+         .onSnapshot(function(snapshot) {
+           snapshot.docs.forEach(doc => {
+             var DocData = doc.data();
+              console.log(DocData);
+              temperature.push(DocData.temperature);
+              config.data.labels.push(DocData.date.toDate());
+              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
+              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
+              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
+           })
+           MakeIt(config);
+           });
+
+    } else {
+        // not signed in
+        userDetails.innerHTML = '';
+    }
+});
+
+async function appendData() {
+    sorts.forEach(sort => {
+      console.log(Object.keys(data_nakd[sort]));
+      Object.keys(data_nakd[sort]).forEach((item, i) => {
+           var data = data_nakd[sort][item];
+           console.log(i);
+           console.log(data.naam);
+           console.log(data_nakd[sort][item]);
+           document.getElementById("name"+String(i+1)).innerHTML = data.naam;
+           document.getElementById("price"+String(i+1)).innerHTML = data.prijs;
+           document.querySelectorAll(".img-fluid")[ice].setAttribute('src', data.img_url);
+           document.getElementById("name"+String(ice+3)).innerHTML = data.naam;
+           document.getElementById("price"+String(ice+3)).innerHTML = data.prijs;
+           document.getElementById("images"+String(ice+3)).setAttribute('src', data.img_url);
+           ice++;
+      });
+    });
+
+}
+
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('./nak/sw.js')
+  }
+
+</script>
+</html>
