@@ -18,7 +18,7 @@
     <canvas id="Chart" width="1080" height="1920" style="display: block; width: 1080px; height: 1920px;"></canvas>
     <p id="userdetails" style="padding: 20px;">Details</p>
     <button type="button" class="btn btn-outline-primary" id="signinbtn" style="padding: 20px;">Sign in</button>
-    <button type="button" class="btn btn-outline-primary" id="MakeIt(config);" style="padding: 20px;">Make It</button>
+    <button type="button" class="btn btn-outline-primary" id="MakeItBtn" style="padding: 20px;">Make It</button>
   </body>
   <script type="text/javascript">
   let temperature = [];
@@ -98,6 +98,7 @@ function MakeIt(config) {
 
 const userDetails = document.getElementById('userdetails');
 const signInBtn = document.getElementById('signinbtn');
+const MakeItBtn = document.getElementById('MakeItBtn');
 var firebaseConfig = {
        apiKey: "AIzaSyBqtBAAiM49gbTDkuu3DJC5TDBCORYpBWM",
        authDomain: "peterwk-52aac.firebaseapp.com",
@@ -111,6 +112,7 @@ var app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 signInBtn.onclick = () => auth.signInWithPopup(provider);
+MakeItBtn.onclick = () => MakeIt(config);
 
 auth.onAuthStateChanged(user => {
     if (user) {
