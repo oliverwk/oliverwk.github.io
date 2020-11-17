@@ -16,6 +16,8 @@
     </head>
   <body id="body">
     <canvas id="Chart" width="1080" height="1920" style="display: block; width: 1080px; height: 1920px;"></canvas>
+    <pre id="userdetails"></pre>
+    <button id="signinbtn">sign<button>
   </body>
   <script type="text/javascript">
   let temperature = [];
@@ -93,7 +95,8 @@ function MakeIt(config) {
     new Chart(ctx, config);
 };
 
-const userDetails = document.getElementById('userDetails');
+const userDetails = document.getElementById('userdetails');
+const signInBtn = document.getElementById('signinbtn');
 var firebaseConfig = {
        apiKey: "AIzaSyBqtBAAiM49gbTDkuu3DJC5TDBCORYpBWM",
        authDomain: "peterwk-52aac.firebaseapp.com",
@@ -106,12 +109,12 @@ var firebaseConfig = {
 var app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-//signInBtn.onclick = () => auth.signInWithPopup(provider);
+signInBtn.onclick = () => auth.signInWithPopup(provider);
 
 auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
-        console.log("hi, "+user.displayName);
+        alert("hi, "+user.displayName);
         var db = app.firestore();
          db.collection("senses").orderBy("date", "desc")
          .onSnapshot(function(snapshot) {
