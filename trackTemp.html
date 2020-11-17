@@ -17,7 +17,7 @@
     </head>
   <body id="body">
     <canvas id="Chart" width="1080" height="1920" style="display: block; width: 1080px; height: 1920px;"></canvas>
-    <p id="userdetails"></p>
+    <p id="userdetails">Details</p>
     <button type="button" class="btn btn-outline-primary" id="signinbtn" >Sign in</button>
   </body>
   <script type="text/javascript">
@@ -116,6 +116,7 @@ auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
         alert("hi, "+user.displayName);
+       userDetails.innerHtml = "hi, "+user.displayName;
         var db = app.firestore();
          db.collection("senses").orderBy("date", "desc")
          .onSnapshot(function(snapshot) {
