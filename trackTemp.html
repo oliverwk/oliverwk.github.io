@@ -92,6 +92,19 @@
 
 function MakeIt(config) {
     console.log(config);
+    var db = app.firestore();
+        db.collection("senses").orderBy("date", "desc")
+         .onSnapshot(function(snapshot) {
+           snapshot.docs.forEach(doc => {
+             var DocData = doc.data();
+              console.log(DocData);
+              temperature.push(DocData.temperature);
+              config.data.labels.push(DocData.date.toDate());
+              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
+              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
+              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
+           })
     var ctx = document.getElementById('Chart').getContext('2d');
     new Chart(ctx, config);
 };
@@ -119,7 +132,7 @@ auth.onAuthStateChanged(user => {
         // signed in
         alert("hi, "+user.displayName);
         var db = app.firestore();
-         db.collection("senses").orderBy("date", "desc")
+        db.collection("senses").orderBy("date", "desc")
          .onSnapshot(function(snapshot) {
            snapshot.docs.forEach(doc => {
              var DocData = doc.data();
