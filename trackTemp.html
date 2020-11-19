@@ -3,11 +3,18 @@
   <head>
     <title>TempTracker</title>
     <meta charset="utf-8">
-    <link rel="manifest" href="./manifest.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#d3a020">
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandeldFriendly" content="true">    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:description" content="TempTracker - Tracking the temperature in maarsen voor het O&O project."/>
+    <meta property="og:title" content="TempTracker - Tracking the temps"/>
+    <meta property="og:image:alt" content="TempTracker Logo"/>
+    <meta property="og:type" content="website"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TempTracker">
+    <meta http-equiv="Cache-control" content="public, max-age=604800">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/">
+    <link rel="preconnect" href="https://www.gstatic.com/firebasejs/8.0.2/">  
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
@@ -15,7 +22,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     </head>
   <body id="body">
-    <canvas id="Chart" width="1080" height="1920" style="display: block; width: 1080px; height: 1920px;"></canvas>
+     <div style="position: relative; height:98vh; width:98vw">
+          <canvas id="Chart"></canvas>
+      </div>
   </body>
   <script type="text/javascript">
   let temperature = [];
