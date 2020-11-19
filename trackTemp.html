@@ -121,7 +121,7 @@ auth.onAuthStateChanged(user => {
               config.data.labels.push(DocData.date.toDate());
               config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
               config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
-              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+              //config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
               config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
            })
            MakeIt(config);
@@ -140,7 +140,7 @@ auth.onAuthStateChanged(user => {
              config.data.labels.push(DocData.date.toDate());
              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
-             config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+             //config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
           })
           MakeIt(config);
