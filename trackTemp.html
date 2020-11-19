@@ -105,6 +105,7 @@ function MakeIt(config) {
               config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
               config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
            })
+          });
     var ctx = document.getElementById('Chart').getContext('2d');
     new Chart(ctx, config);
 };
