@@ -134,7 +134,7 @@ auth.onAuthStateChanged(user => {
               console.log(DocData);
               temperature.push(DocData.temperature);
               config.data.labels.push(DocData.date.toDate());
-              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
+              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
               config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
               config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
               config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
@@ -154,41 +154,16 @@ auth.onAuthStateChanged(user => {
              console.log(DocData);
              temperature.push(DocData.temperature);
              config.data.labels.push(DocData.date.toDate());
-             config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 998.7})
+             config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
-             config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regenMMP})
+             config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regenMMP / 1000})
            
           })
           MakeIt(config);
         });
     }
 });
-
-async function appendData() {
-    sorts.forEach(sort => {
-      console.log(Object.keys(data_nakd[sort]));
-      Object.keys(data_nakd[sort]).forEach((item, i) => {
-           var data = data_nakd[sort][item];
-           console.log(i);
-           console.log(data.naam);
-           console.log(data_nakd[sort][item]);
-           document.getElementById("name"+String(i+1)).innerHTML = data.naam;
-           document.getElementById("price"+String(i+1)).innerHTML = data.prijs;
-           document.querySelectorAll(".img-fluid")[ice].setAttribute('src', data.img_url);
-           document.getElementById("name"+String(ice+3)).innerHTML = data.naam;
-           document.getElementById("price"+String(ice+3)).innerHTML = data.prijs;
-           document.getElementById("images"+String(ice+3)).setAttribute('src', data.img_url);
-           ice++;
-      });
-    });
-
-}
-
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('./nak/sw.js')
-  }
-
 </script>
 </html>
