@@ -68,7 +68,7 @@
               fill: false,
               data: [],
             },{
-              label: 'regenMMP buiten in de bilt',
+              label: 'regen buiten in de bilt',
               backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
               borderColor: chartColors.grey,
               fill: false,
@@ -138,7 +138,7 @@ auth.onAuthStateChanged(user => {
               config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
               config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
               config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
-              config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regenMMP/ 1000})
+              config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regen/ 1000})
            })
            MakeIt(config);
            });
@@ -158,7 +158,7 @@ auth.onAuthStateChanged(user => {
              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
-             config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regenMMP / 1000})
+             config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.regen / 1000})
            
           })
           MakeIt(config);
