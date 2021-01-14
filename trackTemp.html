@@ -1,169 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>TempTracker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#d3a020">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta property="og:description" content="TempTracker - Tracking the temperature in maarssen voor het O&O project."/>
-    <meta property="og:title" content="TempTracker - Tracking the temps"/>
-    <meta property="og:image:alt" content="TempTracker Logo"/>
-    <meta property="og:type" content="website"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="TempTracker">
-    <meta http-equiv="Cache-control" content="public, max-age=604800">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/">
-    <link rel="preconnect" href="https://www.gstatic.com/firebasejs/8.0.2/">
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
-    </head>
-  <body id="body">
-     <div style="position: relative; height:98vh; width:98vw">
-          <canvas id="Chart"></canvas>
-      </div>
-  </body>
-  <script type="text/javascript">
-  let temperature = [];
-  var timeFormat = 'MM/DD/YYYY HH:mm';
-  var color = Chart.helpers.color;
-  const chartColors = {
-    	red: 'rgb(255, 99, 132)',
-    	orange: 'rgb(255, 159, 64)',
-    	yellow: 'rgb(255, 205, 86)',
-    	green: 'rgb(75, 192, 192)',
-    	blue: 'rgb(54, 162, 235)',
-    	purple: 'rgb(153, 102, 255)',
-    	grey: 'rgb(201, 203, 207)'
-  };
-  var config = {
-    type: 'line',
-    data: {
-      labels: [ /* TODO: server dates hier dates uit firebase */ ],
-    datasets: [{
-        label: 'Luchtdruk buiten in de bilt',
-        backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
-        borderColor: chartColors.green,
-        fill: false,
-        data: [],
-      },{
-          label: 'Temperatuur buiten in de bilt',
-          backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
-          borderColor: chartColors.orange,
-          fill: false,
-          data: [],
-        },{
-            label: 'Luchtvochtigheid buiten in de bilt',
-            backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
-            borderColor: chartColors.yellow,
+    <html lang="nl">
+      <head>
+        <title>TempTracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#d3a020">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta property="og:description" content="TempTracker - Tracking de temperatuur in maarssen voor het O&O project."/>
+        <meta property="og:title" content="TempTracker - Tracking the temps"/>
+        <meta property="og:image:alt" content="TempTracker Logo"/>
+        <meta property="og:type" content="website"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="TempTracker">
+        <meta http-equiv="Cache-control" content="public, max-age=604800">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/">	
+        <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/">	
+        <link rel="preconnect" href="https://www.gstatic.com/firebasejs/8.0.2/">
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>		        
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>		   
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+      </head>
+      <body id="body">
+         <div style="position: relative; height:98vh; width:98vw">
+              <canvas id="Chart"></canvas>
+          </div>
+      </body>
+      <script type="text/javascript">
+      let temperature = [];
+      var timeFormat = 'MM/DD/YYYY HH:mm';
+      var color = Chart.helpers.color;
+      const chartColors = {
+        	red: 'rgb(255, 99, 132)',
+        	orange: 'rgb(255, 159, 64)',
+        	yellow: 'rgb(255, 205, 86)',
+        	green: 'rgb(75, 192, 192)',
+        	blue: 'rgb(54, 162, 235)',
+        	purple: 'rgb(153, 102, 255)',
+        	grey: 'rgb(201, 203, 207)'
+      };
+      var config = {
+        type: 'line',
+        data: {
+          labels: [ /* TODO: server dates hier dates uit firebase */ ],
+        datasets: [{
+            label: 'Luchtdruk buiten in de bilt',
+            backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
+            borderColor: chartColors.grey,
             fill: false,
             data: [],
           },{
-              label: 'WindsnelheidMS buiten in de bilt',
-              backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
-              borderColor: chartColors.red,
+              label: 'Temperatuur buiten in de bilt',
+              backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
+              borderColor: chartColors.orange,
               fill: false,
               data: [],
             },{
-              label: 'regen buiten in de bilt',
-              backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
-              borderColor: chartColors.grey,
-              fill: false,
-              data: [],
-            }]
-    },
-    options: {
-      title: {
-        text: 'Track Temp Grafiek'
-      },
-      scales: {
-        xAxes: [{
-          type: 'time',
-          time: {
-            parser: timeFormat,
-            // round: 'day'
-            tooltipFormat: 'll HH:mm'
+                label: 'Luchtvochtigheid buiten in de bilt',
+                backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
+                borderColor: chartColors.green,
+                fill: false,
+                data: [],
+              },{
+                  label: 'WindsnelheidMS buiten in de bilt',
+                  backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+                  borderColor: chartColors.red,
+                  fill: false,
+                  data: [],
+                },{
+                  label: 'regen buiten in de bilt',
+                  backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+                  borderColor: chartColors.blue,
+                  fill: false,
+                  data: [],
+                }]
+        },
+        options: {
+          title: {
+            text: 'Track Temp Grafiek'
           },
-          scaleLabel: {
-            display: true,
-            labelString: 'Date'
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'value'
-          }
-        }]
-      },
-    }
-  };
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                parser: timeFormat,
+                // round: 'day'
+                tooltipFormat: 'll HH:mm'
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Date'
+              }
+            }],
+            yAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'value'
+              }
+            }]
+          },
+        }
+      };
 
-function MakeIt(config) {
-    console.log(config);
-    var ctx = document.getElementById('Chart').getContext('2d');
-    new Chart(ctx, config);
-};
+    function MakeIt(config) {
+        var ctx = document.getElementById('Chart').getContext('2d');
+        new Chart(ctx, config);
+    };
 
-var firebaseConfig = {
-       apiKey: "AIzaSyBqtBAAiM49gbTDkuu3DJC5TDBCORYpBWM",
-       authDomain: "peterwk-52aac.firebaseapp.com",
-       databaseURL: "https://peterwk-52aac.firebaseio.com",
-       projectId: "peterwk-52aac",
-       storageBucket: "peterwk-52aac.appspot.com",
-       messagingSenderId: "1074218483524",
-       appId: "1:1074218483524:web:6217edb6aec709d5726111"
-};
-var app = firebase.initializeApp(firebaseConfig, "PeterWK");
-const auth = app.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-//signInBtn.onclick = () => auth.signInWithPopup(provider);
+    var firebaseConfig = {
+           apiKey: "AIzaSyBqtBAAiM49gbTDkuu3DJC5TDBCORYpBWM",
+           authDomain: "peterwk-52aac.firebaseapp.com",
+           databaseURL: "https://peterwk-52aac.firebaseio.com",
+           projectId: "peterwk-52aac",
+           storageBucket: "peterwk-52aac.appspot.com",
+           messagingSenderId: "1074218483524",
+           appId: "1:1074218483524:web:6217edb6aec709d5726111"
+    };
+    var app = firebase.initializeApp(firebaseConfig, "PeterWK");
+    const auth = app.auth();
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // signed in
+            console.log("hi, "+user.displayName);
+             var db = app.firestore();
+             db.collection("senses").orderBy("date", "desc")
+             .onSnapshot(function(snapshot) {
+               snapshot.docs.forEach(doc => {
+                 var DocData = doc.data();
+                  temperature.push(DocData.temperature);
+                  config.data.labels.push(DocData.date.toDate());
+                  config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
+                  config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
+                  config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+                  config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
+                  config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.regen / 1000})
+               })
+               MakeIt(config);
+               });
 
-auth.onAuthStateChanged(user => {
-    if (user) {
-        // signed in
-        console.log("hi, "+user.displayName);
-         var db = app.firestore();
-         db.collection("senses").orderBy("date", "desc")
-         .onSnapshot(function(snapshot) {
-           snapshot.docs.forEach(doc => {
-             var DocData = doc.data();
-              console.log(DocData);
-              temperature.push(DocData.temperature);
-              config.data.labels.push(DocData.date.toDate());
-              config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
-              config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
-              config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
-              config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
-              config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.regen / 1000})
-           })
-           MakeIt(config);
-           });
+        } else {
+            // not signed in
+            console.info("Not signed in.");
+            var db = app.firestore();
+            db.collection("senses").orderBy("date", "desc")
+            .onSnapshot(function(snapshot) {
+              snapshot.docs.forEach(doc => {
+                var DocData = doc.data();
+                 temperature.push(DocData.temperature);
+                 config.data.labels.push(DocData.date.toDate());
+                 config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
+                 config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
+                 config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
+                 config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
+                 config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.regen / 1000})
 
-    } else {
-        // not signed in
-        console.info("Not signed in.");
-        var db = app.firestore();
-        db.collection("senses").orderBy("date", "desc")
-        .onSnapshot(function(snapshot) {
-          snapshot.docs.forEach(doc => {
-            var DocData = doc.data();
-             console.log(DocData);
-             temperature.push(DocData.temperature);
-             config.data.labels.push(DocData.date.toDate());
-             config.data.datasets[0].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtdruk - 1000})
-             config.data.datasets[1].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.buitenTemperatuur})
-             config.data.datasets[2].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.luchtvochtigheid})
-             config.data.datasets[3].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.weer.windsnelheidMS})
-             config.data.datasets[4].data.push({ x: DocData.weer.datum_weer_buiten.toDate() , y: DocData.regen / 1000})
-
-          })
-          MakeIt(config);
-        });
-    }
-});
-</script>
-</html>
+              })
+              MakeIt(config);
+            });
+        }
+    });
+    </script>
+    </html>
