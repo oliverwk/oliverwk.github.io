@@ -74,7 +74,7 @@
     let dislikes = [];
     let i = 0;
     document.addEventListener("DOMContentLoaded", async (event) => {
-        let Raw_data = await fetch("https://raw.githubusercontent.com/oliverwk/wttpknng/master/Lingerie");
+        let Raw_data = await fetch("https://raw.githubusercontent.com/oliverwk/wttpknng/master/Lingerie.json");
         window.data = await Raw_data.json();
             window.data = shuffle(window.data);;
         NewSlip("Hello")
