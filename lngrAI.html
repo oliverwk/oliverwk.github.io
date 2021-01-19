@@ -1,0 +1,126 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding-top: 15px;
+        font: Arial 14px;
+      }
+      .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      button {
+       border-radius: 4px;
+       font-family: sans-serif;
+       background-color: #d3a020;
+       border: none;
+       color: black;
+       padding: 16px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       transition-duration: 0.4s;
+       width: 100px;
+       position: absolute;
+       bottom: 50px;
+}
+
+      button {
+       background-color: white;
+       border: 2px solid #d3a020;
+      }
+
+        button:hover {
+         font-family: sans-serif;
+         background-color: #d3a020;
+         color: white;
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+      img {
+        width:300px;
+        height: auto;
+        border-radius: 25px;
+        border: solid #718F74 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #dislike {
+        right: 35px;
+        float: right;
+      }
+      
+      #like {
+        float: left;
+        left: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="NewSlip(true)" id="like">Like</button>
+    <button onclick="NewSlip(false)" id="dislike">Dislike</button>
+    <div class="body">
+        <img src=# id="img" x-index=0>
+    </div>
+   </body>
+  <script>
+    let likes = [];
+    let dislikes = [];
+    let i = 0;
+    document.addEventListener("DOMContentLoaded", async (event) => {
+        let Raw_data = await fetch("https://raw.githubusercontent.com/oliverwk/wttpknng/master/Lingerie");
+        window.data = await Raw_data.json();
+            window.data = shuffle(window.data);;
+        NewSlip("Hello")
+    });
+    
+function NewSlip(like){
+    if (typeof like === 'boolean'){
+      if (like) {
+        likes.push(!likes.includes(document.getElementById('img').getAttribute("x-index")) || !dislikes.includes(document.getElementById('img').getAttribute("x-index")) ? document.getElementById('img').getAttribute("x-index") : null)
+      } else {
+         dislikes.push(!likes.includes(document.getElementById('img').getAttribute("x-index")) || !dislikes.includes(document.getElementById('img').getAttribute("x-index")) ? document.getElementById('img').getAttribute("x-index") : null)
+      }
+    } else {console.log("First")};
+  next()
+  }
+    function next() {
+      if (i >= window.data.length) {
+        alert("Done")
+        alert("Likes"+JSON.stringify(likes))  
+        alert("Dislikes"+JSON.stringify(dislikes))
+        fetch("https://raspberrypi3.local/post/", { method:'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({"likes":likes, "dislikes": dislikes, "data": window.data})})
+        } else {
+                console.log(window.data[i]["naam"], window.data[i]["img_url_sec"])
+                document.getElementById('img').src = window.data[i]["img_url_sec"];
+                document.getElementById('img').setAttribute("x-index", i);
+        i++
+      }
+    }
+              function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }     
+
+          return array;
+        }
+
+  </script>
+</html>e
