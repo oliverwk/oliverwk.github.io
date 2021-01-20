@@ -1,0 +1,33 @@
+name: Update
+
+on:
+  schedule:
+  - cron: "0 7-17 * * *"
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+            node-version: '15.x'
+      
+      - name: Setup python environment
+        uses: actions/setup-python@v2
+        with:
+            python-version: '3.x'
+    
+      - name: Install dependencys
+        run: |
+          pip3 install requests bs4
+          npm i node-fetch puppeteer
+          
+      - name: Get data
+        run: |
+          python3 GetWeatherData.py
+          node GetMap.js
+          python3 upload2git.py ${{ secrets.GITHUB_TOKEN }}
+          
