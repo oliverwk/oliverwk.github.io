@@ -28,4 +28,6 @@ jobs:
           python3 GetWeatherData.py
           node GetMap.js
           python3 upload2git.py ${{ secrets.GITHUB_TOKEN }}
-          
+   
+      - name: list    
+        run: /bin/ls
