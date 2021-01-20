@@ -2,7 +2,7 @@ name: Update
 
 on:
   schedule:
-  - cron: "0 7-17 * * *"
+  - cron: "0 7-18 * * *"
 
 jobs:
   stale:
@@ -22,8 +22,8 @@ jobs:
     
       - name: Install dependencys
         run: |
-          pip3 install requests bs4
-          npm i node-fetch puppeteer
+          pip3 install requests beautifulsoup4
+          npm install node-fetch puppeteer
           
       - name: Get data
         run: |
