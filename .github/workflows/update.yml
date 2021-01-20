@@ -2,8 +2,7 @@ name: Update data
 
 on:
   schedule:
-  # TODO add back - cron: "0 6-16 * * *"
-  - cron: "20 17 * * *"
+    - cron: "0 6-16 * * *"
 
 jobs:
   build:
