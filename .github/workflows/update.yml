@@ -1,9 +1,9 @@
-name: Update
+name: Update data
 
 on:
   schedule:
   # TODO add back - cron: "0 6-16 * * *"
-  - cron: "14 17 * * *"
+  - cron: "20 17 * * *"
 
 jobs:
   stale:
