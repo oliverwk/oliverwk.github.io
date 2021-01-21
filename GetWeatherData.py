@@ -11,7 +11,6 @@ for station in soup.find_all('weerstation'):
     luchtdruk.append({"luchtdruk":ll,"lat":station.lat.get_text(),"lon":station.lon.get_text(),"windrichting":station.windrichting.get_text()})
 
 
-#jsons = json.loads(str(json.dumps(luchtdruk, indent=4)).replace('"',""))
 csv = "luchtdruk,lat,lon\n"
 
 for i in luchtdruk:
