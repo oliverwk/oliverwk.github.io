@@ -23,7 +23,7 @@ jobs:
     
       - name: Install dependencys
         run: |
-          pip3 install requests beautifulsoup4
+          pip3 install requests beautifulsoup4 lxml
           npm install node-fetch puppeteer
 
       - name: Get data
