@@ -23,11 +23,13 @@ jobs:
           pip3 install requests beautifulsoup4
           npm install node-fetch puppeteer
           
+      - name: list    
+        run: /bin/ls
+
       - name: Get data
         run: |
           python3 GetWeatherData.py
           node GetMap.js
           python3 upload2git.py ${{ secrets.GITHUB_TOKEN }}
    
-      - name: list    
-        run: /bin/ls
+  
