@@ -119,8 +119,9 @@
            appId: "1:1074218483524:web:6217edb6aec709d5726111"
     };
     if (window.innerWidth <= 786) {
-        document.getElementById('Chart').parentNode.style.height = '128px';
-        document.getElementById('Chart').parentNode.style.width = '128px';
+        console.log("On mobile");
+        document.getElementById('Chart').parentNode.style.height = '';
+        document.getElementById('Chart').parentNode.style.width = '';
     }
     var app = firebase.initializeApp(firebaseConfig, "PeterWK");
     const auth = app.auth();
