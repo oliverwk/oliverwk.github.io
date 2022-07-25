@@ -1,0 +1,1418 @@
+<html lang="nl"><!--It is not allowed to copy this code--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Welk Cijfer Moet Ik Halen?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no, viewport-fit=cover">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#333333">
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="robots" content="noodp, noydir, index, follow">
+    <meta name="revisit-after" content="2 weeks">
+    <link rel="home" href="https://welkcijfermoetikhalen.nl">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://welkcijfermoetikhalen.nl">
+    <meta property="og:title" content="Welk Cijfer Moet Ik Halen?">
+    <meta property="og:site_name" content="Welk Cijfer Moet Ik Halen?">
+    <meta property="og:url" content="https://welkcijfermoetikhalen.nl">
+    <meta property="og:locale" content="nl">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/icon/android-chrome-512x512.png">
+    <meta property="og:image:type" content="image/png">
+    <meta name="description" content="Bereken welk cijfer je moet halen om een bepaald gemiddelde te staan.">
+    <meta property="og:description" content="Bereken welk cijfer je moet halen om een bepaald gemiddelde te staan.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://welkcijfermoetikhalen.nl">
+    <meta name="twitter:title" content="Welk cijfer moet ik halen?">
+    <meta name="twitter:description" content="Bereken welk cijfer je moet halen om een bepaald gemiddelde te staan.">
+    <meta name="twitter:image" content="https://welkcijfermoetikhalen.nl/icon/android-chrome-512x512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" id="webapp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-itunes-app" content="app-id=1595129986">
+<style>
+:root {
+    --page-background: #fff;
+    --text-standard: #333;
+    --text-low-priority: #666;
+    --text-high-priority: #000;
+    --section-background: #ddd;
+    --section-background-gradient: #eee;
+    --button-background: #999;
+    --input-background: #fff;
+    --focus: #666;
+    --red: #ff3b30;
+    --orange: #ff9500;
+    --blue: #007aff;
+    color-scheme: light dark;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+    font-size: 17px;
+    font-size: 100%;
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 28px;
+}
+input, textarea, button, select, label, a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', "Helvetica", "Arial", sans-serif;
+    font-style: normal;
+    font-synthesis: none;
+    -webkit-font-feature-settings: kern;
+    -moz-font-feature-settings: kern;
+    font-feature-settings: kern;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-size: 1.0625rem;
+    color: var(--text-standard, #333);
+    font-weight: 400;
+    line-height: 1.452947;
+    letter-spacing: -.01em;
+    background-color: var(--page-background, #fff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    min-width: 320px;
+}
+main {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 34px 16px;
+    box-sizing: border-box;
+}
+@supports ((padding: max(0px)) and (padding: env(safe-area-inset-left))) {
+    main {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+}
+a {
+    outline: none;
+    color: var(--text-low-priority, #666);
+    -webkit-transition: opacity .4s ease;
+    -moz-transition: opacity .4s ease;
+    -o-transition: opacity .4s ease;
+    transition: opacity .4s ease;
+    -webkit-touch-callout: none;
+}
+a:link, a:visited {
+    text-decoration: underline;
+}
+li a:link, li a:visited {
+    text-decoration: none;
+}
+a:link:hover, a:link:active, a:link:focus {
+    opacity: .5;
+}
+footer.section {
+    color: var(--text-low-priority, #666);
+    padding-bottom: 42px;
+}
+footer ul {
+    list-style: none;
+}
+footer ul li {
+    display: inline-block;
+    border-right: 1.5px solid var(--button-background);
+    margin-right: 1em;
+    padding-right: 1em;
+}
+footer ul li:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+.section {
+    margin-bottom: 8px;
+    border-radius: 15px;
+    background-color: var(--section-background, #ddd);
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 54px;
+    background-image: linear-gradient(var(--section-background-gradient, #eee), var(--section-background, #ddd));
+    overflow: hidden;
+}
+.section.big-gap {
+    margin-bottom: 28px;
+}
+.section:last-child {
+    margin-bottom: 0;
+}
+.section-content {
+    width: 100%;
+    padding: 0 28px;
+    box-sizing: border-box;
+    position: relative;
+}
+.section h1 {
+    font-size: 2.125rem;
+    line-height: 1.08824;
+    letter-spacing: .01em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-high-priority, #000);
+}
+.section h2 {
+    font-size: 1.35rem;
+    line-height: 1.20849;
+    letter-spacing: .015em;
+    font-weight: 500;
+    color: var(--text-high-priority, #000);
+}
+.section h3 {
+    font-size: 2rem;
+    line-height: 1.09375;
+    letter-spacing: .011em;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: var(--text-high-priority, #000);
+}
+.section h4 {
+    font-size: 5rem;
+    line-height: 1.0625;
+    letter-spacing: -.02em;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--text-high-priority, #000);
+}
+.section h5 {
+    font-size: 1.5rem;
+    line-height: 1.20849;
+    letter-spacing: .015em;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.section h6 {
+    font-size: 1rem;
+    line-height: 1.09375;
+    letter-spacing: .011em;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: var(--text-low-priority, #666);
+}
+.section p {
+    font-size: 1.1875rem;
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    max-width: 390px;
+}
+input[type=checkbox] {
+    display: none;
+}
+input[type=number] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', "Helvetica", "Arial", sans-serif;
+    font-style: normal;
+    font-synthesis: none;
+    -webkit-font-feature-settings: kern;
+    -moz-font-feature-settings: kern;
+    font-feature-settings: kern;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.0625rem;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 0;
+    outline: none;
+    background-color: var(--input-background, #fff);
+    text-align: center;
+    width: 100px;
+    box-sizing: border-box;
+    box-shadow: none;
+    -webkit-appearance:none;
+    color: #000;
+    touch-action: manipulation;
+    caret-color: var(--focus, #777);
+}
+input[type=number]:focus-visible {
+    box-shadow: 0 0 0 2px var(--focus, #777);
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+button, .button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', "Helvetica", "Arial", sans-serif;
+    font-style: normal;
+    font-synthesis: none;
+    -webkit-font-feature-settings: kern;
+    -moz-font-feature-settings: kern;
+    font-feature-settings: kern;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.0625rem;
+    border: none;
+    outline: none;
+    /*padding: 9px 32px;
+    line-height: 1.2;*/
+    line-height: 1.3;
+    padding: 11px 32px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    max-width: 280px;
+    background-color: var(--button-background, #999);
+    border-radius: 7px;
+    border-radius: 22px;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: opacity .2s ease;
+    -moz-transition: opacity .2s ease;
+    -o-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+    touch-action: manipulation;
+}
+button:focus-visible, .button:focus-visible {
+    box-shadow: 0 0 0 2px var(--focus, #777);
+}
+button:hover, .button:hover {
+    opacity: .8;
+}
+button svg, .button svg, a svg {
+    width: auto;
+    height: 22px;
+    margin-right: .3em;
+    vertical-align: bottom;
+}
+a svg {
+    width: 19px;
+    vertical-align: text-bottom;
+}
+#result-section button, #result-section .button {
+    margin-right: 12px;
+    margin-left: 12px;
+}
+.message {
+    margin-bottom: 28px;
+    border-radius: 15px;
+    background-color: var(--section-background, #ddd);
+    padding-top: 16px;
+    padding-bottom: 24px;
+    max-width: 288px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+}
+.message:not(noscript) + .message {
+    margin-top: -20px;
+}
+noscript.message {
+    background-color: var(--red, #ff3b30);
+}
+.message-content {
+    padding: 0 16px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+.message figure {
+    padding: 8px 88px;
+}
+.message svg {
+    fill: #fff;
+}
+.message h6 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: #ddd;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.message h4 {
+    font-size: 1.25rem;
+    line-height: 1.20849;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.message a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.message a:hover, .message a:active, .message a:focus {
+    opacity: .5;
+}
+.message a svg {
+    height: 20px;
+    margin-left: .3em;
+    vertical-align: text-bottom;
+}
+.message.amberalert {
+    background-color: var(--orange);
+    padding-bottom: 0;
+}
+.message.amberalert figure {
+    padding-left: 16%;
+    padding-right: 16%;
+    margin-bottom: 8px;
+}
+.message.amberalert figure img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.message.amberalert .message-content > div {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+.message.amberalert h6 {
+    color: var(--orange);
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAABaCAMAAABAK7LgAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAByUExURQAAAOttI8ZgJrBYKO1uI9ZmJcFeJtVlJdJkJehsI+xtI+ttI+ptI65YKO1uI69YKK5YKO1uI////+1sH+5zK/CBP//6+P7y6/KUXbBZKPrUvve8mfa0jf3q3/SfbfGKTfvfzthnJPWrf/jHqcVgJvnPtTuKMJsAAAARdFJOUwDJP7G4I2MGD/2mjnCQ4uvRDkvyBwAABfdJREFUaN7tmWuXqjoMhkccUbyMQi8g5SbI//+LJ0lLKaOjdY+evdZevh9mikCfNE3TAB8fb7311ltvvfX/aAlajcLDl5FWi8UiCMLtdrvZbNbrT9BsFByt1+vNBk6HQRAsFqvfmoJAwAHrc/b19RVFsYeiCC6dfaIhIRnxOHcRbhDohfvRDDRiEy4eA2++4qfpa+MPX22fCCb4duU55HX8dK29Br74jF+gT49xr9bxS7S+H+vb6DXoaHvX3V/xizS7N93byeUMNLZM27SYlXPBcPztJOnOsJeTGOOFUgWnZqVALbRZja1CMPoFm5VgMROFGgTnsvGcE2lLf3+zKkkSmaHhPIdmkiJEYSvJWJcYySaLWSYTe5yxwh6U7bi6b3s8cIOM93hzR21CJxWLeWO6t+gkacSP6ERWg8+j4CY6dAddp2S3YBathh81WhZVVaR0hOim0BKE7qCFZva2w9A7yrCDFHpsDTpNk4bjJJTSoNMa4khZtBoiC++E3xjZ2XC/OHPR6NoOfJ5zjW4aZHWJ7Cw641zgGU7oTtQoMaJF6o76NnrjDDpDQktjI3QOHVZgT9nauS7LEjovYfCIlimpYORwVVVt7s51vPFFxwrnGV1WGDR038FxX30Ls7Tgbpgp5oSZLKy/76DHBM5EidHNcz1b+A9+aWDErUVLCCXV0MgQnTak1kWn46D90RXGrKKeYWmTBR30Dv63aAoz9EseU5hxLZrrpFeqS4cFoncQT7Re1FqdHjWvaBHzKRq90/CrER6jCa0fesyjNBiJoqWt0bSmFRsd3mZZ1dPaddd1bdC6ky5+FI0GFxkIE2er0VzPqxNmZNkw14PaAU3rc1zXN7fsEY03wTThXEpc2nr1Ksrj1TSHf49wjU4o9/c68XvsHxbNRJ/nhTZC5XknijxXABj+9jVrc62+qHF++twqYxVdgbEKDU/0bAwzzidNfTj85fqvjmcWj0fcnrvo5jZ6NYtfqH8HzR6pzp6JZrz+W2jepdXfcTinPZs9Bb38jh6r2UldO6iVdn+YFr+MXSmH/VKKkQDpdclt64LdcXNeizP3yL3tETTPoeigDZe1Q2uMMAWuRpfTRiEaXaKkZV9BgZOOah5MpLZEMqUZa3Up7Dikp8IIt8weMppIx8KkpSxvM7xF394+po+ZtENQaXaB1pWEoBO4bSNa6lINZj9LpdnTpBxrBd9SwZRIiS7NLkfNFfRd6Itajc4F5zVVNRwK0woL4QwaPH4cjQMypdkEDVNsyhgcUY+VgkZjYA91MNmUTxaGf0WKe3RfSR1GLrruGsVNsUws2MmHUWNZTi7W6Mmi8EZTddNyqksnaHrqUvo/uLoiljPXsrXT9afogqKz09XKiKayBWcBvaKo+E+FG+G0zq+hvR98qK7Kal1UumiiQKd4QTEZNaxiOaTWX6D1o4xeIzk3aJ0Yi1SWmQ7qiowqh7kWAtNbz6+jbz9phtF0UZusUBO61YkR4iwTZkJgzSsybYhwnIX0ephFod+jPd1ZdqCcljaibWKkMj9LaXzodmXWNY9jWwdfQd9+tA9OzqLWyUQ/XbTjKwrKTiwraVZpiVUOujIPHJfo0+0XGouZfe6RklIoeB5aWSsHlUKHQgpPkUNiQZCUPb3lgRyqtNuknKBnt18YLufG47zOMpMCBTyCCPyjNSTGrMS8gqkcnUPX2xsnjcHf8zvvC3enq6/Mrr0Jg42Y1aWdAfcF2rcetL/DO6/sgnP0QDEqmslrg5svKvfBva8O8/MDtRk+ZSrude15fvf9bLA/+bMhzHs/8unuoHG2j/5slinu5e7TMbxP/ljtjucnv5iOzsed1ycIYD8THp3OR08ysMMDwM+nU/Q7A6IoOp3OAD6E/p+7FuFhf0Sdz2gCGuFrRkRARCIUtJ8/+KVrFYS7+WGvDbBWGEOu6XwyF4x37PeH+S4MVh+Pa7nCD5nhbjefH8AKx4yfBZcdDvP5bhf+6XfFi++p+H0T7QBDdmjLRPQbnDMfU1ev+q7rfEhevvDz8VtvvfXWW29d1X/0UZkvUONckAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-size: auto 34px;
+    background-position: center right;
+    padding-right: 50px;
+}
+.message.amberalert h4 {
+    color: #000;
+}
+.message.amberalert p {
+    color: #333;
+    margin-bottom: 12px;
+}
+.message.amberalert a {
+    color: #333;
+    font-weight: 600;
+}
+
+table {
+    margin: 0 auto;
+    max-width: 280px;
+    width: 100%;
+}
+table input[type=number] {
+    width: 100%;
+}
+table th {
+    display: inline-block;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    width: 50%;
+    box-sizing: border-box;
+}
+table th:first-child {
+    padding-right: 15px;
+}
+table th:last-child {
+    padding-left: 15px;
+}
+table tr {
+    padding-bottom: 12px;
+    display: block;
+    font-size: 0;
+}
+table td {
+    width: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+table td:nth-child(odd) {
+    padding-right: 14px;
+}
+table td:nth-child(even) {
+    padding-left: 14px;
+}
+#more-button-container {
+    margin-top: 12px;
+    position: relative;
+}
+#enough-rows {
+    margin: 0 auto;
+    display: inline-block;
+}
+#ad-section {
+    display: none;
+    padding-top: 16px;
+    padding-bottom: 28px;
+}
+#ad-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.adsbygoogle {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-point {
+    position: absolute;
+    top: -28px;
+    width: 100%;
+    height: 28px;
+    display: block;
+}
+.two-sides {
+    background-color: transparent;
+    perspective: 2000px;
+    position: relative;
+    z-index: 1;
+}
+.sides {
+    position: relative;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+.side {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front {
+    position: relative;
+}
+.back {
+    position: absolute;
+    top: 0;
+    
+    transform: rotateY(-180deg);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.settings {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    z-index: 2;
+    width: 100%;
+    max-width: 320px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--section-background);
+    height: 100%;
+}
+.settings-clickback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.settings-header {
+    height: 40px;
+    padding: 8px 12px;
+    position: relative;
+}
+.settings-close {
+    padding: 11px;
+    width: 44px;
+    height: 44px;
+    left: auto;
+    right: 12px;
+    top: 8px;
+    position: absolute;
+    transform: scale(.7);
+    transform-origin: right;
+}
+.information-button {
+    font-size: 1.8em;
+    top: -5px;
+    right: 28px;
+    line-height: 0.6;
+    transform: scale(.5);
+    opacity: .75;
+}
+.settings-header h6 {
+    font-size: .9rem;
+    margin-top: 1px;
+    padding-right: 40px;
+}
+.settings-header p {
+    font-size: .8rem;
+    color: var(--text-low-priority);
+    padding-right: 40px;
+}
+.settings-content {
+    padding: 4px 12px 18px;
+}
+.settings-content ul {
+    list-style: none;
+    border-radius: 10px;
+    background: var(--page-background);
+    padding: 0 12px;
+}
+.settings-content ul li {
+    padding: 10px 0;
+    border-bottom: 1.5px solid var(--section-background);
+}
+.settings-content ul li:last-child {
+    border: none;
+}
+.settings-content ul li select {
+    -webkit-appearance: none;
+    background: var(--button-background);
+    color: #fff;
+    outline: none;
+    border: none;
+    display: inline-block;
+    float: right;
+    width: 50%;
+    max-width: 44px;
+    font-size: 1rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: -1px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  float: right;
+  margin-top: -1px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--button-background);
+  transition: 0.4s;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--blue);
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 0 4px rgba(21, 156, 228, 0.7);
+  outline: none;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.switch .slider.round {
+  border-radius: 26px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+#adInfo-section {
+    margin-bottom: 28px;
+}
+#adInfo-section .section {
+    text-align: left;
+    padding-top: 24px;
+    padding-bottom: 28px;
+}
+#adInfo-section .section ul {
+    list-style: none;
+}
+#adInfo-section .section ul li {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 8px 0;
+}
+#adInfo-section .section ul li:nth-child(2n+1) {
+    padding-right: 12px;
+}
+#adInfo-section .section ul li:nth-child(2n+2) {
+    padding-left: 12px;
+}
+#adInfo-section .section ul li figure {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--focus);
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+    margin-right: 8px;
+    background-size: cover;
+    background-position: center center;
+}
+#adInfo-section .section ul li figure svg {
+    width: 80%;
+    height: 76%;
+    margin: 12% 10%;
+}
+#adInfo-section .section ul li .text {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 88px);
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+#adInfo-section .section ul li h6 {
+    color: var(--text-standard);
+    margin-bottom: 4px;
+}
+#adInfo-section .section ul li p {
+    font-size: .9rem;
+    margin-top: 0;
+}
+
+
+
+#result-closeoverlay, #adInfo-closeoverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    -webkit-backdrop-filter: blur(8px) saturate(100%);
+    backdrop-filter: blur(8px) saturate(100%);
+    //background-color: rgba(0,0,0,.08);
+    opacity: 0;
+    transition: opacity .5s;
+    pointer-events: none;
+}
+
+#showResultSettings:checked ~ #result-closeoverlay, #showAdInfo:checked ~ #adInfo-closeoverlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+#showResultSettings:checked ~ #result-section .sides, #showAdInfo:checked ~ #adInfo-section .sides {
+    transform: rotateY(-180deg);
+}
+#showResultSettings:checked ~ #result-section .sides .front, #showAdInfo:checked ~ #adInfo-section .sides .front {
+    pointer-events: none;
+}
+#showResultSettings:checked ~ #result-section .sides .front #result-buttons {
+    visibility: hidden;
+    transition: visibility 0s .9s;
+}
+
+#result-section {
+    display: none;
+    margin-bottom: 28px;
+}
+#resultsettings-button {
+    margin-top: 28px;
+}
+#result-average {
+    font-weight: 700;
+    color: var(--text-high-priority, #000);
+}
+#result-text {
+    margin-top: 8px;
+    font-size: 1.75rem;
+    line-height: 1.1073;
+    letter-spacing: .012em;
+    font-weight: 700;
+    color: var(--text-high-priority, #000);
+}
+#share-button {
+    margin-top: 12px;
+}
+#calculate-text {
+    margin-top: 0;
+}
+#reset-line {
+    display: none;
+    border: none;
+    height: 2px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 2px;
+    margin-top: 32px;
+    background-color: var(--button-background, #999);
+}
+#reset-text {
+    display: none;
+    margin-top: 28px;
+}
+#reset-button {
+    display: none;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .section h3 {
+        font-size: 28px;
+        font-size: 1.75rem;
+        line-height: 1.1073;
+        letter-spacing: .012em;
+    }
+}
+@media only screen and (max-width: 550px) {
+    #result-section button, #result-section .button {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    #adInfo-section .section ul li {
+        width: 100%;
+    }
+    #adInfo-section .section ul li:nth-child(2n+1) {
+        padding-right: 0;
+    }
+    #adInfo-section .section ul li:nth-child(2n+2) {
+        padding-left: 0;
+    }
+    footer ul li {
+        display: block;
+        border-right: none;
+        
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: .5em;
+    }
+    footer ul li:last-child {
+        margin-bottom: 0;
+    }
+}
+@media only screen and (hover: none) {
+    button:hover {
+        opacity: 1;
+    }
+    a:hover, a:active {
+        opacity: 1;
+    }
+}
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+@media only screen and (prefers-color-scheme: dark) {
+    :root {
+        --page-background: #000;
+        --text-standard: #ddd;
+        --text-low-priority: #999;
+        --text-high-priority: #fff;
+        --section-background: #333;
+        --section-background-gradient: #444;
+        --button-background: #666;
+        --input-background: #eee;
+        --focus: #999;
+        --red: #ff453a;
+        --blue: #0084ff;
+    }
+}
+</style>
+<body>
+    <main style="height: auto !important;">
+        <header class="section big-gap">
+            <div class="section-content">
+                <h1>Welk cijfer moet ik&nbsp;halen?</h1>
+                <h2>Bereken welk cijfer je moet halen om een bepaald gemiddelde&nbsp;te&nbsp;staan.</h2>
+            </div>
+        </header>
+        
+        <aside id="messages">
+            <noscript class="message">
+                &lt;div class="message-content"&gt;
+                    &lt;h4&gt;JavaScript staat uit&lt;/h4&gt;
+                    &lt;p&gt;Zet JavaScript aan om deze site te gebruiken.&lt;/p&gt;
+                &lt;/div&gt;
+            </noscript>
+        </aside>
+        
+        <div class="section">
+            <div class="section-content">
+                <h3>Wat wil je staan?</h3>
+                <p><label for="average">Gewenste gemiddelde:</label></p>
+                <input required="required" type="number" inputmode="decimal" min="0.1" max="10" step="0.01" id="average" autocomplete="off" onchange="inputChange()" oninput="inputChange()" tabindex="1" autofocus="">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-content">
+                <h3>Hoe vaak telt de toets mee?</h3>
+                <p><label for="weighting">Weging komende toets:</label></p>
+                <input required="required" type="number" inputmode="decimal" min="0.01" max="100" step="0.01" id="weighting" autocomplete="off" onchange="inputChange()" oninput="inputChange()" tabindex="2">
+            </div>
+        </div>
+        
+        <div class="section big-gap">
+            <div class="section-content">
+                <h3>Welke cijfers heb je al gehaald?</h3>
+                <p>Vul hier de cijfers in die je tot nu toe hebt gehaald en hoe vaak elk cijfer meetelt&nbsp;op&nbsp;je&nbsp;cijferlijst.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cijfer</th>
+                            <th>Weging</th>
+                        </tr>
+                    </thead>
+                    <tbody id="numbers-and-weightings">
+                    <tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="3"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="4"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="5"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="6"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="7"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="8"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="9"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="10"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="11"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="12"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="13"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="14"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="15"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="16"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="17"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="18"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="19"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="20"></td></tr><tr><td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="21"></td>        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="22"></td></tr></tbody>
+                </table>
+                <div id="more-button-container"><button id="more-button" onclick="moreFields()" tabindex="23"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀁍" d="M29.748 58.113 C45.213 58.113 58 45.326 58 29.861 58 14.369 45.185 1.582 29.721 1.582 14.256 1.582 1.496 14.369 1.496 29.861 1.496 45.326 14.283 58.113 29.748 58.113 Z M29.693 43.414 C28.027 43.414 27.016 42.211 27.016 40.49 L27.016 32.566 18.628 32.566 C16.906 32.566 15.677 31.555 15.677 29.889 15.677 28.195 16.852 27.156 18.628 27.156 L27.016 27.156 27.016 18.796 C27.016 17.074 28.027 15.845 29.693 15.845 31.36 15.845 32.426 17.02 32.426 18.796 L32.426 27.156 40.841 27.156 C42.617 27.156 43.765 28.195 43.765 29.889 43.765 31.555 42.563 32.566 40.841 32.566 L32.426 32.566 32.426 40.49 C32.426 42.239 31.36 43.414 29.693 43.414 Z" fill-opacity="1" stroke="none"></path></svg>Voeg&nbsp;extra velden&nbsp;toe</button></div>
+            </div>
+        </div>
+        
+        <input type="checkbox" id="showResultSettings" onchange="resultSettings()">
+        <label for="showResultSettings" id="result-closeoverlay"></label>
+        <div class="two-sides" id="result-section">
+            <div class="scroll-point" id="result-scroll"></div>
+            <div class="sides">
+                <div class="side front">
+                    <section class="section">
+                        <div class="section-content">
+                            <div id="result">
+                                
+                            </div>
+                            <div id="result-buttons">
+                                <label id="resultsettings-button" for="showResultSettings" class="button"><svg fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" stroke="none" d="M 30 59 C 33.893154 59 37.558071 58.25491 40.994854 56.764706 C 44.431633 55.274502 47.463223 53.21619 50.089706 50.589706 C 52.716187 47.963223 54.774502 44.931633 56.264706 41.49485 C 57.75491 38.058071 58.5 34.393158 58.5 30.5 C 58.5 26.606846 57.75491 22.941929 56.264706 19.505146 C 54.774502 16.068367 52.716187 13.036777 50.089706 10.410294 C 47.463223 7.783813 44.426979 5.725498 40.980881 4.235294 C 37.534786 2.74509 33.865215 2 29.972059 2 C 26.078903 2 22.413986 2.74509 18.977205 4.235294 C 15.540424 5.725498 12.513493 7.783813 9.896323 10.410294 C 7.279153 13.036777 5.225497 16.068367 3.735294 19.505146 C 2.245091 22.941929 1.5 26.606846 1.5 30.5 C 1.5 34.393158 2.245091 38.058071 3.735294 41.49485 C 5.225497 44.931633 7.28381 47.963223 9.910295 50.589706 C 12.536778 53.21619 15.568366 55.274502 19.005148 56.764706 C 22.441929 58.25491 26.106844 59 30 59 Z M 30 46.67794 C 29.832354 46.67794 29.655394 46.673283 29.469118 46.663971 C 29.282843 46.654655 29.105883 46.650002 28.938236 46.650002 L 28.1 48.130882 C 27.839214 48.726963 27.382847 48.969116 26.730883 48.857353 C 26.470097 48.820099 26.237257 48.69902 26.032352 48.494118 C 25.82745 48.289215 25.706371 48.037746 25.669117 47.739708 L 25.445589 46.007355 C 25.110291 45.914215 24.779657 45.80711 24.453676 45.686028 C 24.127695 45.564949 23.797062 45.439217 23.461765 45.308823 L 22.204412 46.426472 C 21.757351 46.873531 21.245102 46.94804 20.667646 46.650002 C 20.127449 46.333332 19.913235 45.858337 20.025 45.224998 L 20.388235 43.492645 C 20.071568 43.269119 19.778187 43.045586 19.508089 42.82206 C 19.237989 42.59853 19.000492 42.393631 18.795588 42.207352 L 17.202942 42.82206 C 16.606861 43.082848 16.09461 42.952454 15.666177 42.430882 C 15.479901 42.244606 15.377452 42.011768 15.358824 41.732353 C 15.340195 41.452938 15.396077 41.182846 15.52647 40.922058 L 16.476471 39.441177 C 16.290195 39.143135 16.113235 38.8451 15.945588 38.547058 C 15.777941 38.24902 15.61961 37.941666 15.470589 37.625 L 13.682353 37.708824 C 13.049016 37.727451 12.639216 37.438728 12.452941 36.842648 C 12.248037 36.26519 12.387743 35.780884 12.872059 35.389706 L 14.241177 34.299999 C 14.148037 33.927448 14.073529 33.568874 14.017647 33.224266 C 13.961764 32.879654 13.915195 32.539711 13.877941 32.204414 L 12.229412 31.673529 C 11.633331 31.468626 11.335294 31.058826 11.335294 30.444118 C 11.335294 29.848038 11.633331 29.438236 12.229412 29.214706 L 13.877941 28.711765 C 13.915195 28.376469 13.961764 28.04118 14.017647 27.705883 C 14.073529 27.370586 14.148037 27.01667 14.241177 26.644119 L 12.872059 25.554413 C 12.387743 25.107353 12.248037 24.623043 12.452941 24.101471 C 12.639216 23.468132 13.058329 23.179413 13.710294 23.235294 L 15.470589 23.291176 C 15.61961 23.011765 15.777941 22.713726 15.945588 22.39706 C 16.113235 22.080391 16.290195 21.773045 16.476471 21.474998 L 15.554412 19.966175 C 15.219115 19.407349 15.265684 18.913727 15.694118 18.485294 C 16.103922 18.00098 16.597546 17.861271 17.174999 18.066177 L 18.795588 18.708824 C 19.019117 18.503922 19.26593 18.289707 19.53603 18.066177 C 19.806128 17.842648 20.090195 17.628433 20.388235 17.423531 L 20.025 15.719116 C 19.931862 15.067154 20.146074 14.592159 20.667646 14.294117 C 21.207846 13.958824 21.720097 14.033333 22.204412 14.517647 L 23.461765 15.607353 C 23.797062 15.476963 24.123037 15.351227 24.439707 15.230148 C 24.756374 15.109066 25.091665 15.001961 25.445589 14.908825 L 25.669117 13.148529 C 25.780882 12.533817 26.134802 12.179905 26.730883 12.086765 C 27.382847 11.974998 27.839214 12.189213 28.1 12.729412 L 28.938236 14.294117 C 29.105883 14.294117 29.282843 14.289463 29.469118 14.280148 C 29.655394 14.270832 29.832354 14.266178 30 14.266178 C 30.186275 14.266178 30.363235 14.270832 30.530882 14.280148 C 30.69853 14.289463 30.87549 14.294117 31.061764 14.294117 L 31.872059 12.729412 C 31.983824 12.505882 32.170097 12.328918 32.430882 12.198528 C 32.691669 12.068138 32.971077 12.030884 33.269119 12.086765 C 33.846573 12.179905 34.191177 12.533817 34.30294 13.148529 L 34.52647 14.908825 C 34.880394 15.001961 35.220341 15.109066 35.546322 15.230148 C 35.872307 15.351227 36.193626 15.476963 36.510296 15.607353 L 37.767647 14.517647 C 38.233337 14.033333 38.754898 13.958824 39.332352 14.294117 C 39.835293 14.573528 40.040199 15.048523 39.94706 15.719116 L 39.555882 17.423531 C 39.853924 17.628433 40.142647 17.842648 40.422058 18.066177 C 40.701469 18.289707 40.952942 18.503922 41.176472 18.708824 L 42.825001 18.066177 C 43.365196 17.861271 43.858822 18.00098 44.305882 18.485294 C 44.69706 18.950985 44.734314 19.444603 44.417648 19.966175 L 43.495586 21.474998 C 43.663235 21.735786 43.830883 22.015194 43.998528 22.313236 C 44.166176 22.611279 44.333824 22.937252 44.501472 23.291176 L 46.261765 23.235294 C 46.913727 23.179413 47.342155 23.468132 47.547058 24.101471 C 47.733337 24.660301 47.584316 25.144604 47.099998 25.554413 L 45.702942 26.644119 C 45.796082 26.979412 45.875244 27.314705 45.940441 27.650002 C 46.005638 27.985298 46.066177 28.339214 46.122059 28.711765 L 47.742645 29.214706 C 48.357357 29.438236 48.664707 29.848038 48.664707 30.444118 C 48.664707 31.058826 48.357357 31.468626 47.742645 31.673529 L 46.122059 32.204414 C 46.066177 32.576965 46.005638 32.935539 45.940441 33.280148 C 45.875244 33.624756 45.796082 33.964703 45.702942 34.299999 L 47.099998 35.389706 C 47.60294 35.780884 47.742645 36.26519 47.519119 36.842648 C 47.351471 37.438728 46.941669 37.727451 46.289707 37.708824 L 44.501472 37.625 C 44.352448 37.941666 44.194118 38.24902 44.02647 38.547058 C 43.858822 38.8451 43.681866 39.143135 43.495586 39.441177 L 44.417648 40.922058 C 44.752941 41.480885 44.724998 41.983818 44.333824 42.430882 C 43.886765 42.952454 43.374512 43.082848 42.797058 42.82206 L 41.176472 42.207352 C 40.971565 42.393631 40.734074 42.59853 40.46397 42.82206 C 40.193871 43.045586 39.891178 43.269119 39.555882 43.492645 L 39.94706 45.224998 C 40.040199 45.876965 39.835293 46.351959 39.332352 46.650002 C 38.736271 46.929413 38.214706 46.854904 37.767647 46.426472 L 36.538235 45.308823 C 36.202942 45.439217 35.867645 45.564949 35.532352 45.686028 C 35.19706 45.80711 34.861763 45.914215 34.52647 46.007355 L 34.30294 47.767647 C 34.247059 48.065689 34.125984 48.3125 33.939705 48.508087 C 33.753429 48.703674 33.529903 48.820099 33.269119 48.857353 C 32.598526 48.969116 32.132847 48.726963 31.872059 48.130882 L 31.061764 46.650002 C 30.87549 46.650002 30.693874 46.654655 30.516912 46.663971 C 30.339949 46.673283 30.167646 46.67794 30 46.67794 Z M 17.174999 30.472059 C 17.174999 32.595596 17.617399 34.546806 18.502207 36.325737 C 19.387014 38.104668 20.583815 39.580879 22.092648 40.75441 L 26.563236 33.489708 C 25.762251 32.595581 25.361765 31.608339 25.361765 30.527941 C 25.361765 29.410288 25.752939 28.413731 26.535294 27.538235 L 22.204412 20.077942 C 20.658325 21.270103 19.433582 22.764942 18.530148 24.5625 C 17.626711 26.360058 17.174999 28.329889 17.174999 30.472059 Z M 30 17.479412 C 29.049995 17.479412 28.127947 17.577206 27.233824 17.772793 C 26.339701 17.968384 25.482847 18.243134 24.663235 18.597057 L 29.022058 26.001472 C 29.208334 25.945587 29.380636 25.912991 29.538971 25.903675 C 29.697306 25.89436 29.832354 25.889706 29.944118 25.889706 C 30.931377 25.889706 31.806858 26.164455 32.570587 26.71397 C 33.33432 27.263485 33.921074 28.04117 34.330883 29.047058 L 42.741177 29.047058 C 42.517647 26.830379 41.819122 24.851234 40.645588 23.109558 C 39.472054 21.367886 37.963245 19.994122 36.119118 18.988235 C 34.27499 17.982346 32.235306 17.479412 30 17.479412 Z M 30 43.464706 C 32.235306 43.464706 34.27499 42.957115 36.119118 41.94191 C 37.963245 40.926712 39.472054 39.548294 40.645588 37.806618 C 41.819122 36.064941 42.517647 34.104424 42.741177 31.924999 L 34.358822 31.924999 C 33.930389 32.949516 33.33432 33.741173 32.570587 34.299999 C 31.806858 34.858826 30.931377 35.138237 29.944118 35.138237 C 29.832354 35.138237 29.697306 35.133575 29.538971 35.124264 C 29.380636 35.114952 29.208334 35.082352 29.022058 35.02647 L 24.579412 42.319118 C 26.293144 43.082848 28.099993 43.464706 30 43.464706 Z M 28.351471 30.5 C 28.351471 30.947062 28.51446 31.32892 28.840441 31.645588 C 29.166422 31.962257 29.543625 32.12059 29.972059 32.12059 C 30.437748 32.12059 30.833578 31.962257 31.159559 31.645588 C 31.48554 31.32892 31.648529 30.947062 31.648529 30.5 C 31.648529 30.071568 31.48554 29.70368 31.159559 29.396324 C 30.833578 29.088968 30.437748 28.935293 29.972059 28.935293 C 29.543625 28.935293 29.166422 29.093626 28.840441 29.410294 C 28.51446 29.726963 28.351471 30.090195 28.351471 30.5 Z"></path></svg>Opties voor decimalen</label>
+                            <button type="button" onclick="share()" id="share-button"><svg fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" stroke="none" d="M 29.982306 58.5 C 33.879761 58.5 37.547356 57.759686 40.985207 56.279041 C 44.423061 54.798397 47.456409 52.742996 50.085354 50.112778 C 52.714298 47.482563 54.7733 44.447742 56.262421 41.008228 C 57.751541 37.56871 58.496094 33.899338 58.496094 30 C 58.496094 26.100658 57.751541 22.43129 56.262421 18.991772 C 54.7733 15.552254 52.714298 12.522034 50.085354 9.901016 C 47.456409 7.279999 44.423061 5.224594 40.985207 3.734753 C 37.547356 2.244911 33.870571 1.5 29.954729 1.5 C 26.057272 1.5 22.394274 2.244911 18.965614 3.734753 C 15.536956 5.224594 12.512798 7.279999 9.893045 9.901016 C 7.273293 12.522034 5.218888 15.552254 3.729766 18.991772 C 2.240643 22.43129 1.496094 26.100658 1.496094 30 C 1.496094 33.899338 2.240643 37.56871 3.729766 41.008228 C 5.218888 44.447742 7.273293 47.482563 9.893045 50.112778 C 12.512798 52.742996 15.541553 54.798397 18.979403 56.279041 C 22.417253 57.759686 26.084848 58.5 29.982306 58.5 Z M 21.709446 43.849953 C 20.165171 43.849953 18.9886 43.449905 18.179693 42.649807 C 17.370787 41.849709 16.966341 40.667969 16.966341 39.104549 L 16.966341 25.420135 C 16.966341 23.875114 17.370787 22.697968 18.179693 21.888672 C 18.9886 21.07938 20.165171 20.674732 21.709446 20.674732 L 25.735571 20.674732 L 25.735571 23.792351 L 21.737022 23.792351 C 20.615583 23.792351 20.054874 24.380924 20.054874 25.558083 L 20.054874 39.021782 C 20.054874 40.198944 20.615583 40.787514 21.737022 40.787514 L 37.565762 40.787514 C 38.687195 40.787514 39.24791 40.198944 39.24791 39.021782 L 39.24791 25.558083 C 39.24791 24.380924 38.687195 23.792351 37.565762 23.792351 L 33.594788 23.792351 L 33.594788 20.674732 L 37.620911 20.674732 C 39.183571 20.674732 40.369339 21.074776 41.178242 21.874878 C 41.987144 22.67498 42.391594 23.85672 42.391594 25.420135 L 42.391594 39.104549 C 42.391594 40.667969 41.982552 41.849709 41.164455 42.649807 C 40.346355 43.449905 39.165184 43.849953 37.620911 43.849953 Z M 29.651392 32.676186 C 29.246939 32.676186 28.897642 32.533642 28.603497 32.24855 C 28.309349 31.963453 28.162277 31.618589 28.162277 31.21394 L 28.162277 17.336399 L 28.272581 15.984512 L 27.031652 17.308811 L 25.901028 18.467571 C 25.643648 18.743465 25.285164 18.881413 24.825556 18.881413 C 24.421104 18.881413 24.090193 18.761864 23.832813 18.522751 C 23.575434 18.283638 23.446747 17.961765 23.446747 17.557114 C 23.446747 17.134075 23.60301 16.784607 23.915543 16.508713 L 28.57592 12.039207 C 28.888453 11.671345 29.246939 11.487415 29.651392 11.487415 C 30.019075 11.487415 30.377563 11.671345 30.726864 12.039207 L 35.387241 16.536301 C 35.552696 16.665051 35.672195 16.816795 35.745731 16.991531 C 35.819267 17.166264 35.856037 17.35479 35.856037 17.557114 C 35.856037 17.961765 35.727348 18.283638 35.469971 18.522751 C 35.212589 18.761864 34.872486 18.881413 34.44965 18.881413 C 33.990044 18.881413 33.631557 18.743465 33.374176 18.467571 L 32.243553 17.308811 L 31.030201 15.984512 L 31.168081 17.336399 L 31.168081 31.21394 C 31.168081 31.618589 31.021009 31.963453 30.726864 32.24855 C 30.432716 32.533642 30.074228 32.676186 29.651392 32.676186 Z"></path></svg>Deel resultaat</button></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="side back">
+                    <label for="showResultSettings" class="settings-clickback"></label>
+                    <div class="settings">
+                        <div class="settings-header">
+                            <h6>Opties voor decimalen</h6>
+                            <p>Welk Cijfer Moet Ik Halen?</p>
+                            <label for="showResultSettings" class="button settings-close"><svg fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0.985 52.876 C-0.556 54.418 -0.63 57.17 1.022 58.784 2.636 60.399 5.388 60.362 6.929 58.821 L29.387 36.327 51.881 58.821 C53.459 60.399 56.174 60.399 57.789 58.784 59.367 57.133 59.404 54.454 57.789 52.876 L35.332 30.382 57.789 7.925 C59.404 6.347 59.404 3.631 57.789 2.017 56.138 0.439 53.459 0.402 51.881 1.98 L29.387 24.474 6.929 1.98 C5.388 0.439 2.599 0.366 1.022 2.017 -0.593 3.631 -0.556 6.384 0.985 7.925 L23.479 30.382 Z" fill-opacity="1" stroke="none"></path></svg></label>
+                        </div>
+        
+                        <div class="settings-content">
+                            <ul>
+                                <li>
+                                    <label for="numberOfDecimals">Aantal decimalen</label>
+                                    <select dir="rtl" id="numberOfDecimals" onchange="decimalChange()">
+                                        <option value="1" selected="">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="saveNumberOfDecimals">Onthoud voorkeur</label>
+                                    
+                                    <label class="switch" for="saveNumberOfDecimals">
+                                        <input type="checkbox" id="saveNumberOfDecimals" onchange="decimalChange()">
+                                        <span class="slider round"></span>
+                                      </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <input type="checkbox" id="showAdInfo">
+        <label for="showAdInfo" id="adInfo-closeoverlay"></label>
+        <div class="two-sides" id="adInfo-section">
+            <div class="sides">
+                <div class="side back">
+                    <label for="showAdInfo" class="settings-clickback"></label>
+                    <div class="settings">
+                        <div class="settings-header">
+                            <h6>Informatie</h6>
+                            <p>Welk Cijfer Moet Ik Halen?</p>
+                            <label for="showAdInfo" class="button settings-close"><svg fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0.985 52.876 C-0.556 54.418 -0.63 57.17 1.022 58.784 2.636 60.399 5.388 60.362 6.929 58.821 L29.387 36.327 51.881 58.821 C53.459 60.399 56.174 60.399 57.789 58.784 59.367 57.133 59.404 54.454 57.789 52.876 L35.332 30.382 57.789 7.925 C59.404 6.347 59.404 3.631 57.789 2.017 56.138 0.439 53.459 0.402 51.881 1.98 L29.387 24.474 6.929 1.98 C5.388 0.439 2.599 0.366 1.022 2.017 -0.593 3.631 -0.556 6.384 0.985 7.925 L23.479 30.382 Z" fill-opacity="1" stroke="none"></path></svg></label>
+                        </div>
+        
+                        <div class="settings-content">
+                            <p>De opties die hier zichtbaar zijn maken gebruik van <a href="https://nl.wikipedia.org/wiki/Affiliate_marketing" target="_blank" rel="nofollow">affiliate</a> links.<br><br>Ook in deze lijst staan? neem <a href="mailto:info@welkcijfermoetikhalen.nl">contact</a> op.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section big-gap">
+            <div class="section-content">
+                <p id="calculate-text">Bereken welk cijfer je moet halen</p>
+                <button type="button" id="calculate-button" onclick="calculate(true)" tabindex="24"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀘝" d="M29.996 59 C45.597 59 58.496 46.101 58.496 30.5 58.496 14.9 45.569 2 29.969 2 14.368 2 1.496 14.9 1.496 30.5 1.496 46.101 14.396 59 29.996 59 Z M29.996 35.213 C28.646 35.213 27.515 34.249 27.515 32.815 L27.515 27.551 22.168 27.551 C20.845 27.551 19.825 26.531 19.825 25.318 19.825 24.105 20.845 23.003 22.168 23.003 L27.515 23.003 27.515 17.794 C27.515 16.36 28.646 15.396 29.996 15.396 31.347 15.396 32.504 16.36 32.504 17.794 L32.504 23.003 37.879 23.003 C39.174 23.003 40.194 24.105 40.194 25.318 40.194 26.531 39.174 27.551 37.879 27.551 L32.504 27.551 32.504 32.815 C32.504 34.249 31.347 35.213 29.996 35.213 Z M22.168 44.144 C20.845 44.144 19.825 43.069 19.825 41.856 19.825 40.616 20.845 39.568 22.168 39.568 L37.879 39.568 C39.174 39.568 40.194 40.616 40.194 41.856 40.194 43.069 39.174 44.144 37.879 44.144 Z" fill-opacity="1" stroke="none"></path></svg>Bereken</button>
+                <hr id="reset-line">
+                <p id="reset-text">Bereken wat je moet halen voor een ander vak</p>
+                <button type="button" id="reset-button" onclick="reset()"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀁡" d="M30.248 59.113 C45.986 59.113 59 46.1 59 30.361 59 14.595 45.959 1.582 30.22 1.582 14.482 1.582 1.496 14.595 1.496 30.361 1.496 46.1 14.51 59.113 30.248 59.113 Z M20.599 42.652 C19.125 42.652 17.93 41.456 17.93 39.982 17.93 39.26 18.236 38.62 18.736 38.147 L26.466 30.361 18.736 22.603 C18.236 22.131 17.93 21.463 17.93 20.768 17.93 19.267 19.125 18.126 20.599 18.126 21.35 18.126 21.99 18.405 22.462 18.905 L30.22 26.635 38.034 18.877 C38.562 18.321 39.174 18.099 39.897 18.099 41.398 18.099 42.566 19.267 42.566 20.74 42.566 21.463 42.316 22.047 41.76 22.576 L34.002 30.361 41.76 38.092 C42.233 38.62 42.538 39.232 42.538 39.982 42.538 41.456 41.371 42.652 39.869 42.652 39.09 42.652 38.451 42.346 37.978 41.873 L30.22 34.143 22.518 41.873 C22.017 42.374 21.35 42.652 20.599 42.652 Z" fill-opacity="1" stroke="none"></path></svg>Maak alle velden leeg</button>
+            </div>
+        </section>
+        
+        </footer>
+    </main>
+<script>
+var inputsAtStart = 10;
+var inputIncrease = 5;
+var inputMaximum = 25;
+var haveTo = "moet een";
+var toHave = "halen om een";
+var asAverage = "te staan";
+
+var calculated = false;
+var numberselem = document.getElementsByClassName("number");
+var weightingselem = document.getElementsByClassName("weighting");
+var average = 0;
+var result = 0;
+var weighting = 0;
+var numbers = [];
+var weightings = [];
+var decimalChangeNeedsToBeShown = false;
+function inputsExisting() {return ((numberselem.length >= weightingselem.length) ? numberselem.length : weightingselem.length)};
+function currentLastTabindex() {return Number((inputsExisting() <= 0) ? (document.getElementById("weighting").getAttribute("tabindex")) : (weightingselem[(inputsExisting() - 1)].getAttribute("tabindex")))};
+function calculate(animationAndChecks) {
+    inputChange();
+    numbers = [];
+    weightings = [];
+    if (!animationAndChecks) {
+        for (var i = 0; i < inputsExisting(); i++) {
+            if (numberselem[i].value.length > 0 && weightingselem[i].value.length > 0) {
+                numbers.push(parseFloat(numberselem[i].value));
+                weightings.push(parseFloat(weightingselem[i].value));
+            } else {
+                numbers.push(0);
+                weightings.push(0);
+            }
+        }
+        average = parseFloat(document.getElementById("average").value);
+        weighting = parseFloat(document.getElementById("weighting").value);
+        var all = 0;
+        for (var i = 0; i < numbers.length; i++) {
+            all += (numbers[i]*weightings[i]);
+        }
+        var totalweightings = 0;
+        for (var i = 0; i < weightings.length; i++) {
+            totalweightings += weightings[i];
+        }
+        result = (((totalweightings+weighting)*average)-all)/weighting;
+        var numberOfDecimals = parseInt(document.getElementById("numberOfDecimals").value);
+        var square = 1;
+        if (numberOfDecimals > 0) {
+            square = numberOfDecimals;
+        } 
+        var decimals = Math.pow(10, square);
+        result = Math.ceil(result*decimals)/decimals;
+    
+        if (!isNaN(result) && !isNaN(average)) {
+            if (result < 0) {
+                HaveTo = "mag een";
+            } else {
+                HaveTo = "moet een"; 
+            }
+            if (result < 0) {
+                toHave = "halen om nog een";
+            } else {
+                toHave = "halen om een";
+            }
+            var encouragement = "";
+            if (result > 10) {
+                encouragement = "Tja.. Dat wordt lastig.";
+            } else if (result < 0) {
+                encouragement = "Dat gaat in ieder geval wel lukken.";
+            } else {
+                encouragement = "Succes!";
+            }
+            
+            if (numberOfDecimals > 0) {
+                result = result.toFixed(numberOfDecimals);
+                average = average.toFixed(numberOfDecimals);
+            }
+            var code = '\
+                    <h5>Je ' + HaveTo + '</h5>\
+                    <h4 id="result-number">' + result.toString().replace(".", ",") + '</h4>\
+                    <h5>' + toHave + ' <span id="result-average">' + average.toString().replace(".", ",") + '</span> ' + asAverage + '</h5>\
+                    <h5 id="result-text">' + encouragement + '</h5>';
+            document.getElementById("result").innerHTML = code;
+        }
+    } else {
+        if (!document.getElementById("average").reportValidity()) {
+            return;
+        } else if (!document.getElementById("weighting").reportValidity()) {
+            return;
+        } else {
+            for (var i = 0; i < inputsExisting(); i++) {
+                if (!numberselem[i].reportValidity()) {
+                    return;
+                } else if (!weightingselem[i].reportValidity()) {
+                    return;
+                } else {
+                    if (numberselem[i].value.length > 0 && weightingselem[i].value.length > 0) {
+                        numbers.push(parseFloat(numberselem[i].value));
+                        weightings.push(parseFloat(weightingselem[i].value));
+                    } else {
+                        numbers.push(0);
+                        weightings.push(0);
+                    }
+                }
+            }
+            average = parseFloat(document.getElementById("average").value);
+            weighting = parseFloat(document.getElementById("weighting").value);
+            var all = 0;
+            for (var i = 0; i < numbers.length; i++) {
+                all += (numbers[i]*weightings[i]);
+            }
+            var totalweightings = 0;
+            for (var i = 0; i < weightings.length; i++) {
+                totalweightings += weightings[i];
+            }
+            result = (((totalweightings+weighting)*average)-all)/weighting;
+            var numberOfDecimals = parseInt(document.getElementById("numberOfDecimals").value);
+            var square = 1;
+            if (numberOfDecimals > 0) {
+                square = numberOfDecimals;
+            } 
+            var decimals = Math.pow(10, square);
+            result = Math.ceil(result*decimals)/decimals;
+        
+            if (!isNaN(result) && !isNaN(average)) {
+                if (result < 0) {
+                    HaveTo = "mag een";
+                } else {
+                    HaveTo = "moet een"; 
+                }
+                if (result < 0) {
+                    toHave = "halen om nog een";
+                } else {
+                    toHave = "halen om een";
+                }
+                var encouragement = "";
+                if (result > 10) {
+                    encouragement = "Tja.. Dat wordt lastig.";
+                } else if (result < 0) {
+                    encouragement = "Dat gaat in ieder geval wel lukken.";
+                } else {
+                    encouragement = "Succes!";
+                }
+                
+                if (numberOfDecimals > 0) {
+                    result = result.toFixed(numberOfDecimals);
+                    average = average.toFixed(numberOfDecimals);
+                }
+                var code = '\
+                        <h5>Je ' + HaveTo + '</h5>\
+                        <h4 id="result-number">' + result.toString().replace(".", ",") + '</h4>\
+                        <h5>' + toHave + ' <span id="result-average">' + average.toString().replace(".", ",") + '</span> ' + asAverage + '</h5>\
+                        <h5 id="result-text">' + encouragement + '</h5>';
+                document.getElementById("result").innerHTML = code;
+                
+                document.getElementById("calculate-text").innerHTML = "Bereken met bijvoorbeeld een ander gemiddelde dat je wilt staan";
+                document.getElementById("calculate-button").innerHTML = '<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀚂" d="M29.814 58.629 C45.587 58.629 58.629 45.587 58.629 29.814 58.629 14.042 45.559 1 29.786 1 14.014 1 1 14.042 1 29.814 1 45.587 14.042 58.629 29.814 58.629 Z M17.163 30.985 C17.163 24.213 22.625 18.807 28.811 18.584 29.062 18.584 29.341 18.612 29.536 18.612 L27.892 16.94 C27.557 16.578 27.362 16.132 27.362 15.547 27.362 14.488 28.142 13.596 29.341 13.596 29.926 13.596 30.455 13.847 30.818 14.265 L36.112 19.643 C36.837 20.396 36.893 21.789 36.112 22.541 L30.762 27.892 C30.4 28.254 29.87 28.477 29.369 28.477 28.226 28.477 27.362 27.669 27.362 26.526 27.362 25.997 27.529 25.551 27.836 25.216 L30.093 22.987 C29.814 22.959 29.48 22.959 29.146 22.987 24.854 23.071 21.51 26.666 21.51 31.068 21.51 35.667 25.161 39.373 29.786 39.373 34.412 39.373 38.063 35.667 38.063 31.068 38.063 29.898 39.038 28.923 40.265 28.923 41.435 28.923 42.41 29.898 42.41 31.068 42.41 38.035 36.781 43.692 29.786 43.692 22.82 43.692 17.163 38.035 17.163 30.985 Z" fill-opacity="1" stroke="none"/></svg>Bereken opnieuw';
+                document.getElementById("calculate-button").blur();
+                document.getElementById("result-section").style.display = "block";
+                document.getElementById("reset-line").style.display = "block";
+                document.getElementById("reset-text").style.display = "block";
+                document.getElementById("reset-button").style.display = "inline-block";
+                if ('scrollBehavior' in document.documentElement.style) {
+                    document.getElementById("result-section").scrollIntoView();
+                } else {
+                    document.getElementById("result-scroll").scrollIntoView();
+                }
+                if (calculated === false) {
+                    gtag('event', 'Klik', {
+                        'event_category' : 'Berekenen',
+                        'event_label' : 'Bereken'
+                    });
+                    calculated = true;
+                } else {
+                    gtag('event', 'Klik', {
+                        'event_category' : 'Berekenen',
+                        'event_label' : 'Herbereken'
+                    });
+                }
+            }
+        }
+    }
+}
+function reset() {
+    document.getElementById("result-section").style.display = "none";
+    document.getElementById("calculate-button").innerHTML = '<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀘝" d="M29.996 59 C45.597 59 58.496 46.101 58.496 30.5 58.496 14.9 45.569 2 29.969 2 14.368 2 1.496 14.9 1.496 30.5 1.496 46.101 14.396 59 29.996 59 Z M29.996 35.213 C28.646 35.213 27.515 34.249 27.515 32.815 L27.515 27.551 22.168 27.551 C20.845 27.551 19.825 26.531 19.825 25.318 19.825 24.105 20.845 23.003 22.168 23.003 L27.515 23.003 27.515 17.794 C27.515 16.36 28.646 15.396 29.996 15.396 31.347 15.396 32.504 16.36 32.504 17.794 L32.504 23.003 37.879 23.003 C39.174 23.003 40.194 24.105 40.194 25.318 40.194 26.531 39.174 27.551 37.879 27.551 L32.504 27.551 32.504 32.815 C32.504 34.249 31.347 35.213 29.996 35.213 Z M22.168 44.144 C20.845 44.144 19.825 43.069 19.825 41.856 19.825 40.616 20.845 39.568 22.168 39.568 L37.879 39.568 C39.174 39.568 40.194 40.616 40.194 41.856 40.194 43.069 39.174 44.144 37.879 44.144 Z" fill-opacity="1" stroke="none"/></svg>Bereken';
+    document.getElementById("average").value = "";
+    document.getElementById("weighting").value = "";
+    document.getElementById("average").focus();
+    document.getElementById("reset-line").style.display = "none";
+    document.getElementById("reset-text").style.display = "none";
+    document.getElementById("reset-button").style.display = "none";
+    
+    document.getElementById("numbers-and-weightings").innerHTML = "";
+    setPage();
+    gtag('event', 'Klik', {
+        'event_category' : 'Ander Cijfer',
+        'event_label' : 'Ander Cijfer Berekenen'
+    });
+    calculated = false;
+}
+function moreFields() {
+    if (inputsExisting() < inputMaximum) {
+        for (var i = 0; i < inputIncrease; i++) {
+            addRowOfInputs();
+        }
+        gtag('event', 'Klik', {
+            'event_category' : 'Meer Velden',
+            'event_label' : 'Toevoegen'
+        });
+        for (var i = 0; i < inputsExisting(); i++) {
+            if (numberselem[i].value.length <= 0) {
+                numberselem[i].focus();
+                return;
+            } else if (weightingselem[i].value.length <= 0) {
+                weightingselem[i].focus();
+                return;
+            }
+        }
+    } else {
+        document.getElementById("more-button-container").innerHTML = '<p id="enough-rows">Zo&nbsp;is het wel&nbsp;genoeg. Je&nbsp;moet eens bij je school gaan klagen dat je te veel toetsen&nbsp;hebt.</p>';
+        gtag('event', 'Klik', {
+            'event_category' : 'Meer Velden',
+            'event_label' : 'Maximaal'
+        });
+    }
+}
+function addRowOfInputs() {
+    var e = document.createElement("tr");
+        e.innerHTML = '<td><input type="number" inputmode="decimal" min="0.1" max="10" step="0.01" class="number" onchange="inputChange()" oninput="inputChange()" tabindex="' + (currentLastTabindex() + 1) + '"></td>\
+        <td><input type="number" inputmode="decimal" min="0.01" max="100" step="0.01" class="weighting" onchange="inputChange()" oninput="inputChange()" tabindex="' + (currentLastTabindex() + 2) + '"></td>';
+    document.getElementById("numbers-and-weightings").appendChild(e);
+}
+function inputChange() {
+    var currentNumbers = [];
+    var currentWeightings = [];
+    var numbersAndWeightingslength = 0;
+    for (var i = 0; i < inputsExisting(); i++) {
+        numbersAndWeightingslength += numberselem[i].value.length + weightingselem[i].value.length;
+        if (numberselem[i].value.length > 0) {
+            weightingselem[i].setAttribute("required", "required");
+            currentNumbers.push(parseFloat(numberselem[i].value));
+        } else {
+            weightingselem[i].removeAttribute("required");
+            currentNumbers.push(0);
+        }
+        if (weightingselem[i].value.length > 0) {
+            numberselem[i].setAttribute("required", "required");
+            currentWeightings.push(parseFloat(weightingselem[i].value));
+        } else {
+            numberselem[i].removeAttribute("required");
+            currentWeightings.push(0);
+        }
+    }
+    if (numbersAndWeightingslength <= 0) {
+        for (var i = 0; i < inputsExisting(); i++) {
+            weightingselem[i].setAttribute("required", "required");
+            numberselem[i].setAttribute("required", "required");
+        }
+    }
+    var currentAverage = parseFloat(document.getElementById("average").value);
+    var currentWeighting = parseFloat(document.getElementById("weighting").value);
+    function numbersSame() {
+        if (numbers.length > currentNumbers.length) {
+            var maxlength = numbers.length;
+        } else {
+            var maxlength = currentNumbers.length;
+        }
+        for (var i = 0; i < maxlength; i++) {
+            if (numbers[i] !== currentNumbers[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function weightingsSame() {
+        if (weightings.length > currentWeightings.length) {
+            var maxlength = weightings.length;
+        } else {
+            var maxlength = currentWeightings.length;
+        }
+        for (var i = 0; i < maxlength; i++) {
+            if (weightings[i] !== currentWeightings[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    if (average == currentAverage && weighting == currentWeighting && numbersSame() && weightingsSame()) {
+        if (document.getElementById("average").value.length > 0) {
+            document.getElementById("average").setCustomValidity("Verander het gemiddelde dat je wilt staan of de waarde van een ander veld om opnieuw te kunnen berekenen");   
+        } else {
+            document.getElementById("average").setCustomValidity("");
+        }
+        document.getElementById("result-section").style.display = "block";
+    } else {
+        document.getElementById("result-section").style.display = "none";
+        document.getElementById("average").setCustomValidity("");
+    }
+}
+function setPage() {
+    for (var i = 0; i < inputsAtStart; i++) {
+        addRowOfInputs();
+    }
+    if (!document.getElementById("more-button")) {
+        document.getElementById("more-button-container").innerHTML = '<button id="more-button" onclick="moreFields()"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="currentColor"><path id="􀁍" d="M29.748 58.113 C45.213 58.113 58 45.326 58 29.861 58 14.369 45.185 1.582 29.721 1.582 14.256 1.582 1.496 14.369 1.496 29.861 1.496 45.326 14.283 58.113 29.748 58.113 Z M29.693 43.414 C28.027 43.414 27.016 42.211 27.016 40.49 L27.016 32.566 18.628 32.566 C16.906 32.566 15.677 31.555 15.677 29.889 15.677 28.195 16.852 27.156 18.628 27.156 L27.016 27.156 27.016 18.796 C27.016 17.074 28.027 15.845 29.693 15.845 31.36 15.845 32.426 17.02 32.426 18.796 L32.426 27.156 40.841 27.156 C42.617 27.156 43.765 28.195 43.765 29.889 43.765 31.555 42.563 32.566 40.841 32.566 L32.426 32.566 32.426 40.49 C32.426 42.239 31.36 43.414 29.693 43.414 Z" fill-opacity="1" stroke="none"/></svg>Voeg&nbsp;extra velden&nbsp;toe</button>';
+    }
+    document.getElementById("calculate-text").innerHTML = "Bereken welk cijfer je moet halen";
+}
+function share() {
+    navigator.share({
+        title: "Welk cijfer moet ik halen?",
+        text: "Ik " + haveTo + " " + result.toString().replace(".", ",") + " " + toHave + " " + average.toString().replace(".", ",") + " " + asAverage + ".",
+        url: "https://welkcijfermoetikhalen.nl",
+    })
+    .then(() => {
+        gtag('event', 'Klik', {
+            'event_category' : 'Deel',
+            'event_label' : 'Gedeeld'
+        });
+    })
+    .catch((e) => {});
+}
+function decimalChange() {
+    decimalChangeNeedsToBeShown = true;
+    if (document.getElementById("saveNumberOfDecimals").checked) {
+        localStorage.setItem("decimals", parseInt(document.getElementById("numberOfDecimals").value));
+    } else {
+        localStorage.removeItem("decimals");
+    }
+}
+function resultSettings() {
+    if (!document.getElementById("showResultSettings").checked) {
+        if (decimalChangeNeedsToBeShown) {
+            calculate(false);
+            decimalChangeNeedsToBeShown = false;
+            gtag('event', 'Klik', {
+                'event_category' : 'Resultaat instellingen',
+                'event_label' : 'Aanpassing decimaal'
+            });
+        }
+    }
+}
+window.addEventListener('load', function() {
+    if (navigator.onLine) {
+        checkAmberAlert();
+    }
+    
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {}, function(err) {});
+    }
+    
+});
+document.addEventListener('DOMContentLoaded', function() {
+    setPage();
+    let url = new URL(window.location.href)
+    let params = new URLSearchParams(url.search);
+    if (params.has("g")) {
+        let averageParameter = params.get("g");
+        let averageParameterFloat = averageParameter.replace(",", ".");
+        let shortcutAverage = parseFloat(averageParameter);
+        if (!isNaN(shortcutAverage)) {
+            document.getElementById("average").value = shortcutAverage;
+            if (document.getElementById("average").reportValidity()) {
+                document.getElementById("weighting").focus();
+            }
+        }
+    }
+    
+    if (navigator.share) {
+        document.getElementById("result-buttons").innerHTML += '<button type="button" onclick="share()" id="share-button"><svg fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" stroke="none" d="M 29.982306 58.5 C 33.879761 58.5 37.547356 57.759686 40.985207 56.279041 C 44.423061 54.798397 47.456409 52.742996 50.085354 50.112778 C 52.714298 47.482563 54.7733 44.447742 56.262421 41.008228 C 57.751541 37.56871 58.496094 33.899338 58.496094 30 C 58.496094 26.100658 57.751541 22.43129 56.262421 18.991772 C 54.7733 15.552254 52.714298 12.522034 50.085354 9.901016 C 47.456409 7.279999 44.423061 5.224594 40.985207 3.734753 C 37.547356 2.244911 33.870571 1.5 29.954729 1.5 C 26.057272 1.5 22.394274 2.244911 18.965614 3.734753 C 15.536956 5.224594 12.512798 7.279999 9.893045 9.901016 C 7.273293 12.522034 5.218888 15.552254 3.729766 18.991772 C 2.240643 22.43129 1.496094 26.100658 1.496094 30 C 1.496094 33.899338 2.240643 37.56871 3.729766 41.008228 C 5.218888 44.447742 7.273293 47.482563 9.893045 50.112778 C 12.512798 52.742996 15.541553 54.798397 18.979403 56.279041 C 22.417253 57.759686 26.084848 58.5 29.982306 58.5 Z M 21.709446 43.849953 C 20.165171 43.849953 18.9886 43.449905 18.179693 42.649807 C 17.370787 41.849709 16.966341 40.667969 16.966341 39.104549 L 16.966341 25.420135 C 16.966341 23.875114 17.370787 22.697968 18.179693 21.888672 C 18.9886 21.07938 20.165171 20.674732 21.709446 20.674732 L 25.735571 20.674732 L 25.735571 23.792351 L 21.737022 23.792351 C 20.615583 23.792351 20.054874 24.380924 20.054874 25.558083 L 20.054874 39.021782 C 20.054874 40.198944 20.615583 40.787514 21.737022 40.787514 L 37.565762 40.787514 C 38.687195 40.787514 39.24791 40.198944 39.24791 39.021782 L 39.24791 25.558083 C 39.24791 24.380924 38.687195 23.792351 37.565762 23.792351 L 33.594788 23.792351 L 33.594788 20.674732 L 37.620911 20.674732 C 39.183571 20.674732 40.369339 21.074776 41.178242 21.874878 C 41.987144 22.67498 42.391594 23.85672 42.391594 25.420135 L 42.391594 39.104549 C 42.391594 40.667969 41.982552 41.849709 41.164455 42.649807 C 40.346355 43.449905 39.165184 43.849953 37.620911 43.849953 Z M 29.651392 32.676186 C 29.246939 32.676186 28.897642 32.533642 28.603497 32.24855 C 28.309349 31.963453 28.162277 31.618589 28.162277 31.21394 L 28.162277 17.336399 L 28.272581 15.984512 L 27.031652 17.308811 L 25.901028 18.467571 C 25.643648 18.743465 25.285164 18.881413 24.825556 18.881413 C 24.421104 18.881413 24.090193 18.761864 23.832813 18.522751 C 23.575434 18.283638 23.446747 17.961765 23.446747 17.557114 C 23.446747 17.134075 23.60301 16.784607 23.915543 16.508713 L 28.57592 12.039207 C 28.888453 11.671345 29.246939 11.487415 29.651392 11.487415 C 30.019075 11.487415 30.377563 11.671345 30.726864 12.039207 L 35.387241 16.536301 C 35.552696 16.665051 35.672195 16.816795 35.745731 16.991531 C 35.819267 17.166264 35.856037 17.35479 35.856037 17.557114 C 35.856037 17.961765 35.727348 18.283638 35.469971 18.522751 C 35.212589 18.761864 34.872486 18.881413 34.44965 18.881413 C 33.990044 18.881413 33.631557 18.743465 33.374176 18.467571 L 32.243553 17.308811 L 31.030201 15.984512 L 31.168081 17.336399 L 31.168081 31.21394 C 31.168081 31.618589 31.021009 31.963453 30.726864 32.24855 C 30.432716 32.533642 30.074228 32.676186 29.651392 32.676186 Z"/></svg>Deel resultaat</button>';
+    }
+    if (localStorage.getItem('decimals')) {
+        document.getElementById("numberOfDecimals").value = localStorage.getItem('decimals');
+        document.getElementById("saveNumberOfDecimals").checked = true;
+    }
+}, false);
+function checkAmberAlert() {
+    function showAmberAlert(title, description, link, image) {
+        var code = '<aside class="message amberalert">\
+            <div class="message-content">\
+                <figure><img src="' + image + '" onerror="this.parentNode.style.display=\'none\'" loading="lazy"></figure>\
+                <div>\
+                <h6>Amber Alert</h6>\
+                <h4>' + title + '</h4>\
+                <p>' + description.replaceAll(/(?:\r\n|\r|\n)/g, '<br>') + '</p>\
+                <a href="' + link + '" target="_blank" rel="noopener">Lees meer<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path id="􀂅" d="M30.191 59 C45.899 59 58.886 46.012 58.886 30.305 58.886 14.57 45.871 1.582 30.163 1.582 14.456 1.582 1.496 14.57 1.496 30.305 1.496 46.012 14.484 59 30.191 59 Z M38.988 38.297 C37.406 38.297 36.435 37.215 36.435 35.55 L36.435 30.693 36.879 26.309 32.772 30.777 22.115 41.406 C21.533 41.988 20.867 42.266 20.034 42.266 18.452 42.266 17.342 41.211 17.342 39.574 17.342 38.825 17.647 38.131 18.203 37.576 L28.887 26.891 33.41 22.784 29.248 23.256 24.086 23.256 C22.421 23.256 21.338 22.257 21.338 20.731 21.338 19.177 22.393 18.205 24.058 18.205 L38.35 18.205 C40.32 18.205 41.486 19.177 41.486 21.286 L41.486 35.495 C41.486 37.16 40.515 38.297 38.988 38.297 Z" fill="#333" fill-opacity="1" stroke="none"/></svg></a>\
+                </div>\
+            </div>\
+            </aside>';
+            document.getElementById("messages").innerHTML += code;
+    }
+
+    fetch("https://services.burgernetcdn.nl/landactiehost/rss")
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+        const items = data.querySelectorAll("item");
+        items.forEach(el => {
+            if (el.querySelector("circle").innerHTML.length == 0) {
+                showAmberAlert(el.querySelector("title").innerHTML, el.querySelector("description").innerHTML, el.querySelector("link").innerHTML, el.querySelector("image").innerHTML);
+            }
+        })
+    })
+    .catch(function(error) {
+        
+    })
+}
+class Notification {
+    constructor(category, title, text, image, color) {
+        var code = '<aside class="message"';
+        if (color.length) code += ' style="background-color:' + color + '"';
+        code += '>\
+            <div class="message-content">';
+        if (image.length) code += '<figure>' + image + '</figure>';
+        if (title.length || text.length || link.length) {
+            code += '<div>';
+            if (category.length) code += '<h6>' + category + '</h4>';
+            if (title.length) code += '<h4>' + title + '</h4>';
+            if (text.length) code += '<p>' + text + '</p>';
+            code += '</div>';
+        }
+        code += '</div>\
+        </aside>';
+        
+        document.getElementById("messages").innerHTML += code;
+    }
+}
+</script>
+</body></html>
