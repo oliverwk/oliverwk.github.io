@@ -1,0 +1,572 @@
+:root {
+    /* Link naar de kleuren https://colorhunt.co/palette/f6f6c9bad1c24fa095153462 */
+    --colour1: #F6F6C9;
+    --colour2: #BAD1C2;
+    --colour3: #4FA095;
+    --colour4: #153462;
+}
+
+/* Voor telefoons*/
+* {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+main {
+    margin: 1ch;
+    margin-bottom: 6ch;
+    overflow: hidden;
+}
+
+footer p {
+    margin-left: 1ch;
+}
+
+footer {
+    background-color: var(--colour4);
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 6ch;
+}
+
+header {
+    background-color: var(--colour4);
+    color: #ffffff;
+    top: 0px;
+    position: sticky;
+}
+
+nav li {
+    display: inline;
+}
+
+nav {
+    height: 6.25ch;
+}
+
+header .logo {
+    padding-top: 0.5ch;
+    height: 5ch;
+    float: right;
+    padding-right: 0.5ch;
+}
+
+.header-img {
+    width: 100vw;
+    overflow: hidden;
+}
+
+nav .burger {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1ch;
+    padding: 1ch;
+}
+
+nav .burger span {
+    background-color: #FFFFFF;
+    width: 45px;
+    height: 0.75ch;
+    border-radius: 10px;
+}
+
+nav .burger {
+    display: grid;
+}
+nav .click {
+    display: none;
+    padding-left: 0px;
+}
+
+nav .dropdown-burger {
+    display: none; /*dit standaard totdat iemand er op klikt (voor meer info zie html)*/
+    grid-template-columns: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#burgerbox {
+    display: none;
+}
+
+#burgerbox:checked + label > .dropdown-burger {
+    display: grid;
+}
+
+.buger-contain .dropdown-burger span {
+    background-color: var(--colour4);
+    text-align: center;
+    z-index: 100;
+    padding: 16px;
+}
+
+.dropdown-burger span a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 16px 150px 16px 150px;
+    /*padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 150px;
+    padding-left: 150px;*/
+}
+
+.dropdown-burger span:hover a {
+    color: #000000;
+}
+
+.dropdown-burger span:hover {
+    background-color: var(--colour1);
+}
+
+
+.hobby-img {
+    height: unset;
+    width: 100%;
+    float: left;
+    padding-right: unset;
+    padding-bottom: 10px;
+}
+
+.hobby-contain {
+    border: 4px solid var(--colour3);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.hobbys {
+    list-style-type: none;
+    padding-left: 0px;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1vh;
+}
+
+#form {
+    position: absolute;
+    /*margin-top: calc(calc(5 * 1ch) + calc(16px * 12)); zodat hij niet met het menu blijft raar doen*/
+}
+
+#form label {
+    position: absolute;
+    left: 5px;
+}
+
+#form div input:focus-visible {
+    outline: none;
+}
+
+#form .naam label {
+    top: calc(1ch - 1px); 
+}
+
+#form .naam label.typed {
+    top: calc(-1ch - 5px) !important;
+}
+
+#form .naam input:focus + label {
+    animation-name: benden_boven_naam;
+    animation-duration: 1s;
+    top: calc(-1ch - 5px) ;
+}
+
+@keyframes benden_boven_naam {
+    from {top: calc(1ch - 1px);}
+    to {top: calc(-1ch - 5px);}
+}
+
+
+#form .email input:focus-visible {
+    outline: none;
+}
+
+#form .email label.typed {
+    top: calc(10px + 1ch + 10px) !important;
+}
+
+#form .email input:focus + label {
+    animation-name: benden_boven_mail;
+    animation-duration: 1s;
+    top: calc(10px + 1ch + 10px );
+}
+
+@keyframes benden_boven_mail {
+    from {top: calc(10px + 1ch + 10px + 10px + 1ch)}
+    to {top: calc(10px + 1ch + 10px);}
+}
+
+#form .email label {
+    top: calc(10px + 1ch + 10px + 10px + 1ch);
+}
+
+#form input {
+    border-bottom: var(--colour3) solid 1px;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    margin: 10px 10px 10px 5px;
+    width: 25ch;
+}
+
+#form textarea {
+    max-width: 95%;
+    height: 10em; /*rows*/
+    width: clamp(10em, 60em, 100%); /*cols*/
+}
+
+#form button {
+    background-color: var(--colour2);
+    color: #000000;
+    border-radius: 7.5px;
+    border: none;
+    padding: 10px;
+    margin-top: 2ch;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.geen_knip {
+    display: unset;
+}
+.knip {
+    display: none;
+}
+.img_held {
+    width: 100vw;
+}
+
+.img_helden {
+    float: unset;
+    width: 100vw;
+}
+
+.contact-kaart {
+    width: 100vw;
+}
+
+.contact-div {
+    position: absolute;
+    margin-top: 380px;
+}
+/* Voor tablets*/
+@media only screen and (min-width: 672px) and (max-width: 800px) {
+    .hobby-img {
+        height: unset;
+        width: 100%;
+        padding-right: 10px;
+        padding-bottom: unset;
+    }
+    
+    .hobbys {
+        grid-template-columns: auto auto;
+    }
+    
+    nav .buger-contain {
+        display: none;
+    }
+    nav .click {
+        display: block;
+    }
+    
+    header .logo {
+        padding-top: 0.5ch;
+        height: 5ch;
+    }
+    header nav {
+        height: 6ch;
+    }
+    .header-img {
+        float: right;
+        border: 15px solid #ffff00;
+        width: 35vw;
+    }
+    nav .click {
+        list-style-type: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0ch;
+        padding-bottom: 1ch;
+    }
+    
+    .click li a:active {
+        background-color: #04AA6D;
+    }
+    
+    .click li a:hover {
+        background-color: var(--colour1);
+        padding: 1.5ch;
+        color: #000000;
+        width: 100%;
+    }
+    
+    
+    .click li a {
+        margin: 0px;
+        padding: 1.5ch;
+        display: inline-block;
+        color: #ffffff;
+        text-align: center;
+        text-decoration: none;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    #form {
+        margin-top: unset;
+    }
+    .titel_held {
+        margin-top: 100px;
+        width: 150px;
+        font-size: 85px;
+        padding-top: 100px;
+        margin-bottom: 0px;
+    }
+    .geen_knip {
+        display: none;
+    }
+    .knip {
+        display: unset;
+    }
+    .img_held {
+        height: 80vh;
+        max-height: 90%;
+        width: unset;
+        float: right;
+        margin-top: -275px;
+        padding-right: 2.5vw;
+    }
+    .text_held {
+        width: 50ch;
+    }
+    .contact-kaart {
+        width: 40vw !important;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .hobbys {
+        grid-template-columns: auto auto;
+    }
+    .titel_held {
+        font-size: 10ch !important;
+    }
+    .img_held {
+        margin-top: calc(-12ch - 200px) !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .header-img {
+        height: unset;
+        width: 35vw;
+        padding-right: 10px;
+        padding-bottom: unset;
+    }
+    .img_held {
+        padding-right: 5vw !important;
+    }
+}
+
+/* Voor desktop*/
+@media only screen and (min-width: 800px) and (max-width: 2800px) {
+    #form {
+        margin-top: unset;
+    }
+    .titel_held {
+        margin-top: 100px;
+        width: 40vw;
+        font-size: 20ch;
+        padding-top: 100px;
+        margin-bottom: 0px;
+    }
+    
+    .geen_knip {
+        display: none;
+    }
+    .knip {
+        display: unset;
+    }
+    
+    .img_held {
+        width: unset;
+        height: 80vh;
+        max-height: 90%;
+        float: right;
+        margin-top: calc(-22ch - 200px);
+        padding-right: 15vw;
+        
+    }
+    
+    .text_held {
+        width: 50ch;
+        font-size: 1.3rem;
+        padding-left: 10px;
+    }
+    
+    #form {
+        margin-top: unset;
+    }
+    
+    .hobby-img {
+        height: unset;
+        width: 20vw;
+        padding-right: 10px;
+        padding-bottom: unset;
+    }
+    
+    .hobbys {
+        grid-template-columns: auto auto auto;
+    }
+    nav .buger-contain {
+        display: none;
+        height: 0px;
+        padding: 0px !important;
+        margin: 0px;
+    }
+    
+    nav .click {
+        display: block;
+    }
+    
+    header nav {
+        height: 6ch;
+    }
+    
+    header .logo {
+        padding-top: 0.5ch;
+        height: 5ch;
+    }
+    
+    .header-img {
+        float: right;
+        border: 15px solid #008000;
+        height: 75vh;
+        width: unset;
+        animation: rainbow 3s linear;
+        animation-iteration-count: infinite;
+        margin-top: -50px;
+        margin-right: 5vw;
+    }
+    
+    .interesses p, .leeftijd_text {
+        width: 55vw;
+    }
+    nav .click {
+        list-style-type: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0ch;
+        padding-bottom: 1ch;
+    }
+    
+    nav ul li a:active {
+        background-color: #04AA6D;
+    }
+    
+    nav ul li a:hover {
+        background-color: var(--colour1);
+        color: #000000;
+    }
+    
+    nav ul li a {
+        margin: 0px;
+        padding: 1.5ch;
+        display: inline-block;
+        color: #ffffff;
+        text-align: center;
+        text-decoration: none;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        padding-bottom: 2.1ch;
+    }
+    .img_helden {
+        float: right;
+        width: 40vw;
+        margin-top: -50px;
+        margin-left: 2.5vw;
+        margin-right: 1.5vw;
+    }
+    .contact-kaart {
+        width: 40vw;
+        padding-top: 1rem;
+    }
+    .contact-div table {
+        border-collapse: collapse;
+        margin-bottom: 6ch;
+    }
+    .contact-div table th, td {
+        border: 1px solid var(--colour3);
+        text-align: left;
+        padding: 8px;
+    }
+    
+    .held_info img {
+        border-radius: 10px;
+        width: 40vw;
+        border: 5px #000000 solid;
+    }
+    
+    .info_held_info a {
+        text-decoration: none;
+        color: #000000;
+    }
+    .info_held_info {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@keyframes rainbow {
+    100%,0% {
+        border-color: rgb(255,0,0);
+    }
+    
+    8% {
+        border-color: rgb(255,127,0);
+    }
+    
+    16% {
+        border-color: rgb(255,255,0);
+    }
+    
+    25% {
+        border-color: rgb(127,255,0);
+    }
+    
+    33% {
+        border-color: rgb(0,255,0);
+    }
+    
+    41% {
+        border-color: rgb(0,255,127);
+    }
+    
+    50% {
+        border-color: rgb(0,255,255);
+    }
+    
+    58% {
+        border-color: rgb(0,127,255);
+    }
+    
+    66% {
+        border-color: rgb(0,0,255);
+    }
+    
+    75% {
+        border-color: rgb(127,0,255);
+    }
+    
+    83% {
+        border-color: rgb(255,0,255);
+    }
+    
+    91% {
+        border-color: rgb(255,0,127);
+    }
+}

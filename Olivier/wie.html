@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="media/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Wie ben ik?</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="media/favicon.png" alt="Logo van Olivier"></a>
+        <nav>
+            <div class="buger-contain">
+                <input type="checkbox" id="burgerbox">
+                <label for="burgerbox">
+                    <span class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    
+                    <span class="dropdown-burger">
+                        <span><a href="index.html">home</a></span>
+                        <span><a href="wie.html">wie ben ik</a></span>
+                        <span><a href="wat.html">wat kan ik</a></span>
+                        <span><a href="wil.html">wat wil ik</a></span>
+                        <span><a href="helden.html">mijn helden</a></span>
+                        <span><a href="contact.html">contact</a></span>
+                    </span>
+                </label>
+            </div>
+            <ul class="click">
+                <li><a href="index.html">home</a></li>
+                <li><a href="wie.html">wie ben ik</a></li>
+                <li><a href="wat.html">wat kan ik</a></li>
+                <li><a href="wil.html">wat wil ik</a></li>
+                <li><a href="helden.html">mijn helden</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Wie ben ik?</h1>
+        <img class="header-img" src="media/img-1.jpg" alt="Foto van Olivier in het bos aan een meer met in de weerspigeling de tweeling berg">
+        <p class="leeftijd_text">Ik ben Olivier <span id="leeftijd"></span> jaar oud. Met mijn ouders, mijn broertje en zusje woon ik in Maarssen. Ik ben geboren in Amsterdam en heb daar heb ik met mij ouders anderhalf jaar gewoond. Daarna ben ik naar Maarssen verhuisd.</p>
+        <br>
+        <div class="interesses">
+            <h3>Interesses</h3>
+            <p>
+                Ik heb vele interesses een daarvan is reizen met de trein. Het reizen met de trein is volgens mij de ultieme manier van reizen met misschien alleen de concorde op de tweede plaats. Het reizen met de trein is super comfortabel, zeker in de lange afstand treinen in het buitenland zoals de ICE of TGV. Het is vaak niet sneller dat met het vliegtuig en is in de meeste gevallen iets langer dan met de auto. Toch geniet ik enorm van het uitzicht dat je hebt terwijl je rustig door het landschap reist. Als je aankomt op het eindstation hoef je niet heel lang te reizen, want je bent in een keer in het centrum van de stad. 
+            </p>
+            <p>
+                Fotograferen is ook een van mijn interesse's zoals als je kan zien in de foto hier naast. Ik vind het leuk om foto's te maken vooral van landschappen. De laatste tijd experimenteer ik ook met het fotograferen van architectuur, ik vind dit nog wel lastig. Als ik de kans krijg, omdat ik bijvoorbeeld in een stad ben probeer ik de architectuur van verschillenden de perspectieven te fotograferen dit geeft in mijn ervaring het beste resultaat.
+            </p>
+            <p>
+                Ik heb ook een interesse in computer. Dit is wel logisch gezien ik informatica heb gekozen, maar ik maak in mijn vrije tijd ook websites of apps. De laatste tijd probeer ik meer met hardware te doen. Het is alleen best lastig en als iets kapotgaat moet je iets nieuws bestellen wat tijd en geld kost. Ik heb thuis wat Arduinos staat verspreid over het huis die de temperatuur en luchtkwaliteit meten. Dit versturen ze allemaal naar mij Raspberry Pi die fungeert als centrale server en ook een HomeKit server draait zodat ik het kan zien op mijn telefoon.
+            </p>
+        </div>
+    </main>
+    <script>
+        let element_leeftijd = document.getElementById('leeftijd');
+        let vandaag = new Date();
+        let geboortedag = new Date(2006, 09, 12);
+        let leeftijd = vandaag - geboortedag;
+        element_leeftijd.textContent = leeftijd / (60*60*24*365*1000);
+    </script>
+    <footer>
+        <p>Design by Olivier</p>
+    </footer>
+</body>
+</html>

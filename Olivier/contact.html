@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="media/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Wie ben ik?</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="media/favicon.png" alt="Logo van Olivier"></a>
+        <nav>
+            <div class="buger-contain">
+                <input type="checkbox" id="burgerbox">
+                <label for="burgerbox">
+                    <span class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="dropdown-burger">
+                        <span><a href="index.html">home</a></span>
+                        <span><a href="wie.html">wie ben ik</a></span>
+                        <span><a href="wat.html">wat kan ik</a></span>
+                        <span><a href="wil.html">wat wil ik</a></span>
+                        <span><a href="helden.html">mijn helden</a></span>
+                        <span><a href="contact.html">contact</a></span>
+                    </span>
+                </label>
+            </div>
+            <ul class="click">
+                <li><a href="index.html">home</a></li>
+                <li><a href="wie.html">wie ben ik</a></li>
+                <li><a href="wat.html">wat kan ik</a></li>
+                <li><a href="wil.html">wat wil ik</a></li>
+                <li><a href="helden.html">mijn helden</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact</h1>
+        <form id="form">
+            <div class="naam">
+                <input  type="text" id="naam" value="">
+                <label for="naam">Naam</label>
+                <br>
+            </div>
+            <div class="email">
+                <input type="email" name="e_mail" id="e_mail" value="" required>
+                <label for="e_mail">e-mail</label>
+                <br>
+            </div>
+            <textarea placeholder="Bericht" rows="10" cols="60" id="bericht"></textarea>            
+            <br>
+            <button id="submit_button" type="submit">Verstuur</button>
+        </form>
+        <div class="contact-div">
+            <p>Als u liever langs komt dan kan dat op Pauwenkamp 151 3603 GK, Maarssen</p>
+            <img class="contact-kaart" src="media/maarssen-osm.png" alt="Kaart van Maarssen">
+            <table>
+                <tr>
+                    <th>Ma-Vr</th>
+                    <th>Sa</th>
+                    <th>Zo</th>
+                </tr>
+                <tr>
+                    <td>08:00-17:00</td>
+                    <td>12:00-16:00</td>
+                    <td>gesloten</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <script>
+        
+        ["naam", "e_mail", "burgerbox"].forEach(element_id => {
+            let el = document.getElementById(element_id);
+            console.log(element_id)
+            el.addEventListener("change", () => {
+                if (el.value != "") {
+                    el.parentElement.children[1].setAttribute("class", "typed");
+                }
+                if (element_id == "e_mail" && !el.value.includes("niftarlake")) {
+                    alert("vul uw niftarlake adres in, hij werkt echt.");
+                }
+                if (element_id == "burgerbox" && el.checked) {
+                    document.getElementById("form").style = "margin-top: calc(calc(5 * 1ch) + calc(16px * 12));";
+                } else if (element_id == "burgerbox" && !el.checked) {
+                    document.getElementById("form").style = "margin-top: unset;";
+                }
+            });
+        });
+        
+        document.getElementById("form").addEventListener('submit', (e) => {
+            e.preventDefault();
+            let e_data = {};
+            for (let i = 0; i < e.target.children.length; i++) {
+                
+                const element = e.target.children[i];
+                console.log(element)
+                if (element.tagName.toUpperCase() == "DIV") {
+                    e_data[element.children[0].getAttribute("id")] = element.children[0].value;
+                    console.log(element.children[0].getAttribute("id"));
+                } else if (element.tagName.toUpperCase() == "TEXTAREA") {
+                    e_data[element.getAttribute("id")] = element.value;
+                }
+            }
+            
+            console.log(JSON.stringify(e_data));
+            
+            fetch("https://send.wttp.workers.dev/send_mail", {
+                mode: "no-cors",
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(e_data)
+            }).then(res => {
+                console.log("response:", res);
+                if (res.status >= 200) {
+                    console.log("Mail was send")
+                }
+                window.location.href = "./bedankt.html";
+            }).catch(err => {
+                console.log("error:", err);
+                window.location.href = "./dank.html";
+            });
+        });
+        
+    </script>
+    <footer>
+        <p>Design by Olivier</p>
+    </footer>
+</body>
+</html>
